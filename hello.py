@@ -10,7 +10,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return 'Hello World!'
+    return 'Hello World!!!'
 
 # bashで叩いたかimportで入れたかを判定する
 if __name__ == '__main__':
