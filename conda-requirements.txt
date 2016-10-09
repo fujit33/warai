@@ -8,12 +8,16 @@ itsdangerous=0.24=py35_0
 jinja2=2.8=py35_1
 libpq=9.5.4=0
 markupsafe=0.23=py35_2
+mkl=11.3.3=0
+numpy=1.11.2=py35_0
 openssl=1.0.2j=0
 pastedeploy=1.5.2=py35_1
 pip=8.1.2=py35_0
 psycopg2=2.6.2=py35_0
 python=3.5.2=0
 readline=6.2=2
+scikit-learn=0.18=np111py35_0
+scipy=0.18.1=np111py35_0
 setuptools=27.2.0=py35_0
 sqlite=3.13.0=0
 tk=8.5.18=0
