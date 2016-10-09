@@ -1,1 +1,2 @@
-web: gunicorn index:app --log-file=-
+# http://stackoverflow.com/questions/16416172/how-can-i-modify-procfile-to-run-gunicorn-process-in-a-non-standard-folder-on-he
+web: gunicorn --pythonpath App app:app
