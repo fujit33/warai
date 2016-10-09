@@ -7,4 +7,3 @@ db = SQLAlchemy(app)
 
 
 from app.routes import index
-
