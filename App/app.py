@@ -1,6 +1,5 @@
 import numpy
 import scipy
-import sklearn
 from flask import Flask
 
 app = Flask(__name__)
