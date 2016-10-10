@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>survey</title>
+</head>
+<body>
+<h2>REGISTER</h2>
+  <form action="" method="post" name="register">
+      {{ form.hidden_tag() }}
+      <p>
+          title:<br>
+          {{ form.title() }}<br>
+      </p>
+      {% for error in form.title.errors %}
+            <span style="color: red;">TITLEを入力してください。</span>
+          {% endfor %}<br>
+      <p>
+          detail:<br>
+          {{ form.detail() }}<br>
+      </p>
+      <p>
+        {% for subfield in form.choice_switcher%}
+      <tr>
+        <td>{{ subfield }}</td>
+        <td>{{ subfield.label }}</td>
+      </tr>
+        {% endfor %}
+      </p>
+      <p><input type="submit" value="投稿"></p>
+  </form>
+{% for hyoka in hyoka_list %}
+  <h2>{{ hyoka.title }}</h2>
+  {{ hyoka.detail }}
+  {{ hyoka.timestamp }}
+  {{ hyoka.choice }}
+  <hr>
+{% endfor %}
+
+
+</body>
+</html>
