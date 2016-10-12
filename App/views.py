@@ -37,7 +37,7 @@ def survey():
         hyoka = Hyoka(title=title, detail=detail, choice=choice, timestamp=timestamp)
         db.session.add(hyoka)
         db.session.commit()
-        return redirect(url_for('register'))
+        return redirect(url_for('survey'))
 
     hyoka_list = Hyoka.query.order_by(Hyoka.timestamp.desc())
     return render_template('survey.html',
