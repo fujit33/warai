@@ -19,7 +19,7 @@ def register():
         todo = Todo(title=title, detail=detail, timestamp=timestamp)
         db.session.add(todo)
         db.session.commit()
-        return redirect(url_for('register'))
+        return redirect(url_for('survey'))
 
     todo_list = Todo.query.order_by(Todo.timestamp.desc())
     return render_template('register.html',
@@ -37,7 +37,7 @@ def survey():
         hyoka = Hyoka(title=title, detail=detail, choice=choice, timestamp=timestamp)
         db.session.add(hyoka)
         db.session.commit()
-        return redirect(url_for('survey'))
+        return redirect(url_for('register'))
 
     hyoka_list = Hyoka.query.order_by(Hyoka.timestamp.desc())
     return render_template('survey.html',
