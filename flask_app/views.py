@@ -1,7 +1,7 @@
 import datetime
 from flask import render_template, flash, redirect, url_for, request
 
-from flask_app import app, db
+from App import app, db
 from .forms import TodoForm, HyokaForm
 from .models import Todo, Hyoka
 

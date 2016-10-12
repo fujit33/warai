@@ -6,6 +6,7 @@
 </head>
 <body>
 <h2>REGISTER</h2>
+<div>
   <form action="" method="post" name="register">
       {{ form.hidden_tag() }}
       <p>
@@ -29,6 +30,7 @@
       </p>
       <p><input type="submit" value="投稿"></p>
   </form>
+</div>
 {% for hyoka in hyoka_list %}
   <h2>{{ hyoka.title }}</h2>
   {{ hyoka.detail }}
