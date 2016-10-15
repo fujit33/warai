@@ -5,54 +5,58 @@
     <title>survey</title>
 </head>
 <body>
-<h2>REGISTER</h2>
+<h2>アンケートです！</h2>
 <div>
-  <form action="" method="post" name="register">
-      {{ form.hidden_tag() }}
+      {% for boke in bokes %}
       <div>
-          <img src="http://d2dcan0armyq93.cloudfront.net/photo/odai/400/8460f2e5f80260be8995a058d10acf39_400.jpg">
-          <p>綾鷹</p>
+        <img src="{{ boke.img }}">
+        <p>{{boke.text}}</p>
       </div>
-      <p>
-        {% for subfield in form.choice_switcher%}
-      <tr>
-        <td>{{ subfield }}</td>
-        <td>{{ subfield.label }}</td>
-      </tr>
-        {% endfor %}
-      </p>
-      {% for error in form.choice_switcher.errors %}
-        <span style="color: red;">評価を入力してください。</span>
-      {% endfor %}<br>
-      <p><input type="submit" value="次へ"></p>
+      {% endfor %}
+  <form action="" method="post" name="survey">
+      {{ form.hidden_tag() }}
+        <p>{{ form.choice0() }}</p><p>{{ form.choice1() }}</p><p>{{ form.choice2() }}</p><p>{{ form.choice3() }}</p><p>{{ form.choice4() }}</p>
+        <p>{{ form.choice5() }}</p><p>{{ form.choice6() }}</p><p>{{ form.choice7() }}</p><p>{{ form.choice8() }}</p><p>{{ form.choice9() }}</p>
+        <p>{{ form.choice10() }}</p><p>{{ form.choice11() }}</p><p>{{ form.choice12() }}</p><p>{{ form.choice13() }}</p><p>{{ form.choice14() }}</p>
+        <p>{{ form.choice15() }}</p><p>{{ form.choice16() }}</p><p>{{ form.choice17() }}</p><p>{{ form.choice18() }}</p><p>{{ form.choice19() }}</p>
+        <p>{{ form.choice20() }}</p><p>{{ form.choice21() }}</p><p>{{ form.choice22() }}</p><p>{{ form.choice23() }}</p><p>{{ form.choice24() }}</p>
+        <p>{{ form.choice25() }}</p><p>{{ form.choice26() }}</p><p>{{ form.choice27() }}</p><p>{{ form.choice28() }}</p><p>{{ form.choice29() }}</p>
+
+
+      <div>
+        {{form.comp0 }}
+      </div>
+
+      <div>
+        {{ form.comp1 }}
+      </div>
+
+      <div>
+        {{ form.comp2 }}
+      </div>
+
+      <div>
+        {{ form.comp3 }}
+      </div>
+
+      <div>
+        {{ form.botti }}
+      </div>
+
+      <div>
+        {{ form.bokete() }}
+      </div>
+
+      <p><input type="submit" value="GO"></p>
   </form>
 </div>
-<div>
-  <form action="" method="post" name="register">
-      {{ form.hidden_tag() }}
-      <div>
-          <img src="http://d2dcan0armyq93.cloudfront.net/photo/odai/600/44285705a73651179df91885985d12f3_600.jpg">
-          <p>コンプレックスですか？ありませんよ。</p>
-      </div>
-      <p>
-        {% for subfield in form.choice_switcher%}
-      <tr>
-        <td>{{ subfield }}</td>
-        <td>{{ subfield.label }}</td>
-      </tr>
-        {% endfor %}
-      </p>
-      {% for error in form.choice_switcher.errors %}
-        <span style="color: red;">評価を入力してください。</span>
-      {% endfor %}<br>
-      <p><input type="submit" value="次へ"></p>
-  </form>
-</div>
-{% for hyoka in hyoka_list %}
-  <h2>{{ hyoka.title }}</h2>
-  {{ hyoka.detail }}
-  {{ hyoka.timestamp }}
-  {{ hyoka.choice }}
+
+
+{% for hyoka in survey_list %}
+  {{ hyoka.boke0 }}
+  {{ hyoka.boke1 }}
+  {{ hyoka.botti }}
+  {{ hyoka.bokete }}
   <hr>
 {% endfor %}
 
