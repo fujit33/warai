@@ -1,65 +1,75 @@
 <!DOCTYPE html>
-<html>
+<html ng-app = 'app'>
 <head lang="en">
     <meta charset="UTF-8">
     <title>survey</title>
 </head>
 <body>
 <h2>アンケートです！</h2>
+
 <div>
       {% for boke in bokes %}
-      <div>
-        <img src="{{ boke.img }}">
-        <p>{{boke.text}}</p>
+      <div class="question">
+        <img src="{{ boke.img }}" ng-model="{{ boke.model }}">
+        <p ng-model="{{ boke.model }}">{{boke.text}}</p>
       </div>
       {% endfor %}
   <form action="" method="post" name="survey">
       {{ form.hidden_tag() }}
-        <p>{{ form.choice0() }}</p><p>{{ form.choice1() }}</p><p>{{ form.choice2() }}</p><p>{{ form.choice3() }}</p><p>{{ form.choice4() }}</p>
-        <p>{{ form.choice5() }}</p><p>{{ form.choice6() }}</p><p>{{ form.choice7() }}</p><p>{{ form.choice8() }}</p><p>{{ form.choice9() }}</p>
-        <p>{{ form.choice10() }}</p><p>{{ form.choice11() }}</p><p>{{ form.choice12() }}</p><p>{{ form.choice13() }}</p><p>{{ form.choice14() }}</p>
-        <p>{{ form.choice15() }}</p><p>{{ form.choice16() }}</p><p>{{ form.choice17() }}</p><p>{{ form.choice18() }}</p><p>{{ form.choice19() }}</p>
-        <p>{{ form.choice20() }}</p><p>{{ form.choice21() }}</p><p>{{ form.choice22() }}</p><p>{{ form.choice23() }}</p><p>{{ form.choice24() }}</p>
-        <p>{{ form.choice25() }}</p><p>{{ form.choice26() }}</p><p>{{ form.choice27() }}</p><p>{{ form.choice28() }}</p><p>{{ form.choice29() }}</p>
+        <div class="form">{{ form.choice0() }}</div><div class="form">{{ form.choice1() }}</div><div class="form">{{ form.choice2() }}</div><div class="form">{{ form.choice3() }}</div><div class="form">{{ form.choice4() }}</div>
+        <div class="form">{{ form.choice5() }}</div><div class="form">{{ form.choice6() }}</div><div class="form">{{ form.choice7() }}</div><div class="form">{{ form.choice8() }}</div><div class="form">{{ form.choice9() }}</div>
+        <div class="form">{{ form.choice10() }}</div><div class="form">{{ form.choice11() }}</div><div class="form">{{ form.choice12() }}</div><div class="form">{{ form.choice13() }}</div><div class="form">{{ form.choice14() }}</div>
+        <div class="form">{{ form.choice15() }}</div><div class="form">{{ form.choice16() }}</div><div class="form">{{ form.choice17() }}</div><div class="form">{{ form.choice18() }}</div><div class="form">{{ form.choice19() }}</div>
+        <div class="form">{{ form.choice20() }}</div><div class="form">{{ form.choice21() }}</div><div class="form">{{ form.choice22() }}</div><div class="form">{{ form.choice23() }}</div><div class="form">{{ form.choice24() }}</div>
+        <div class="form">{{ form.choice25() }}</div><div class="form">{{ form.choice26() }}</div><div class="form">{{ form.choice27() }}</div><div class="form">{{ form.choice28() }}</div><div class="form">{{ form.choice29() }}</div>
 
-
-      <div>
-        {{form.comp0 }}
+      <div class="question">
+        コンプレックス質問1
+      </div>
+      <div class="form">
+        {{form.comp0() }}
       </div>
 
-      <div>
-        {{ form.comp1 }}
+      <div class="question">
+        コンプレックス質問2
+      </div>
+      <div class="form">
+        {{ form.comp1() }}
       </div>
 
-      <div>
-        {{ form.comp2 }}
+      <div class="question">
+        コンプレックス質問3
+      </div>
+      <div class="form">
+        {{ form.comp2() }}
       </div>
 
-      <div>
-        {{ form.comp3 }}
+      <div class="question">
+        コンプレックス質問4
+      </div>
+      <div class="form">
+        {{ form.comp3() }}
       </div>
 
-      <div>
-        {{ form.botti }}
+      <div class="question">
+        ぼっち質問
+      </div>
+      <div class="form">
+        {{ form.botti() }}
       </div>
 
-      <div>
+      <div class="question">
+        ボケて下さい
+      </div>
+      <div class="form">
         {{ form.bokete() }}
       </div>
-
-      <p><input type="submit" value="GO"></p>
+  <input id="next" type="button" value="Next!">
+　<input id="finish" type="submit" value="送信">
   </form>
 </div>
 
 
-{% for hyoka in survey_list %}
-  {{ hyoka.boke0 }}
-  {{ hyoka.boke1 }}
-  {{ hyoka.botti }}
-  {{ hyoka.bokete }}
-  <hr>
-{% endfor %}
-
-
+<script type="text/javascript" src="/static/js/main.js"></script>
 </body>
 </html>
