@@ -1,8 +1,9 @@
 <!DOCTYPE html>
-<html ng-app = 'app'>
+<html>
 <head lang="en">
     <meta charset="UTF-8">
     <title>survey</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/main.css">
 </head>
 <body>
 <h2>アンケートです！</h2>
@@ -10,12 +11,12 @@
 <div>
       {% for boke in bokes %}
       <div class="question">
-        <img src="{{ boke.img }}" ng-model="{{ boke.model }}">
-        <p ng-model="{{ boke.model }}">{{boke.text}}</p>
+        <img src="{{ boke.img }}">
+        <p>{{boke.text}}</p>
       </div>
       {% endfor %}
   <form action="" method="post" name="survey">
-      {{ form.hidden_tag() }}
+  {{ form.hidden_tag() }}
         <div class="form">{{ form.choice0() }}</div><div class="form">{{ form.choice1() }}</div><div class="form">{{ form.choice2() }}</div><div class="form">{{ form.choice3() }}</div><div class="form">{{ form.choice4() }}</div>
         <div class="form">{{ form.choice5() }}</div><div class="form">{{ form.choice6() }}</div><div class="form">{{ form.choice7() }}</div><div class="form">{{ form.choice8() }}</div><div class="form">{{ form.choice9() }}</div>
         <div class="form">{{ form.choice10() }}</div><div class="form">{{ form.choice11() }}</div><div class="form">{{ form.choice12() }}</div><div class="form">{{ form.choice13() }}</div><div class="form">{{ form.choice14() }}</div>
@@ -57,18 +58,21 @@
       <div class="form">
         {{ form.botti() }}
       </div>
-
       <div class="question">
         ボケて下さい
       </div>
       <div class="form">
         {{ form.bokete() }}
       </div>
+      <div class="form">
+        {{ form.twitter() }}
+      </div>
   <input id="next" type="button" value="Next!">
 　<input id="finish" type="submit" value="送信">
   </form>
 </div>
 
+<div id="inputerror">値を入力して下さい！</div>
 
 <script type="text/javascript" src="/static/js/main.js"></script>
 </body>

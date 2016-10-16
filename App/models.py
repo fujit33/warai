@@ -49,6 +49,7 @@ class Survey(db.Model):
     boke24 = db.Column(db.Integer)
     boke25 = db.Column(db.Integer)
     boke26 = db.Column(db.Integer)
+
     boke27 = db.Column(db.Integer)
     boke28 = db.Column(db.Integer)
     boke29 = db.Column(db.Integer)
@@ -61,6 +62,7 @@ class Survey(db.Model):
     botti = db.Column(db.Integer)
 
     bokete = db.Column(db.String(5000))
+    twitter = db.Column(db.String(500))
 
     timestamp = db.Column(db.DateTime)
     def __repr__(self):
