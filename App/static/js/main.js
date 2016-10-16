@@ -37,6 +37,7 @@ document.getElementById("next").addEventListener("click", function() {
             f[cnt+1].style.display = "block";
         }
     }else{
+        f[36].style.display = "none";
         document.getElementById("finish").style.display = "block";
         document.getElementById("next").style.display = "none";
     }
