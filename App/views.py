@@ -1,11 +1,19 @@
-import datetime
 from flask import render_template, flash, redirect, url_for, request
 
 from App import app, db
 from .forms import TodoForm, SurveyForm
 from .models import Todo, Survey
 
-import logging
+from datetime import datetime,timedelta, tzinfo
+
+class JST(tzinfo):
+    # タイムゾーンの変更用
+    def utcoffset(self, dt):
+        return timedelta(hours=9)
+    def dst(self, dt):
+        return timedelta(0)
+    def tzname(self, dt):
+        return 'JST'
 
 @app.route('/')
 def hello_world():
@@ -90,14 +98,14 @@ def survey():
         bokete = form.bokete.data
         twitter = form.twitter.data
 
-        timestamp = datetime.datetime.utcnow()
+        timestamp = datetime.now(tz=JST())
         survey = Survey(boke0=boke0, boke1=boke1,boke2=boke2,boke3=boke3,boke4=boke4,boke5=boke5,boke6=boke6,boke7=boke7,boke8=boke8,boke9=boke9,
             boke10=boke10, boke11=boke11,boke12=boke12,boke13=boke13,boke14=boke14,boke15=boke15,boke16=boke16,boke17=boke17,boke18=boke18,boke19=boke19,
             boke20=boke20, boke21=boke21,boke22=boke22,boke23=boke23,boke24=boke24,boke25=boke25,boke26=boke26,boke27=boke27,boke28=boke28,boke29=boke29,
             comp0 = comp0, comp1= comp1, comp2=comp2, comp3=comp3, botti=botti, bokete=bokete, twitter=twitter, timestamp=timestamp)
         db.session.add(survey)
         db.session.commit()
-        return redirect(url_for('thanks'))
+        return redirect(url_for('/thanks'))
 
     survey_list = Survey.query.order_by(Survey.timestamp.desc())
     return render_template('survey.html',

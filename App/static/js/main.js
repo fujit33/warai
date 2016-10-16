@@ -2,6 +2,7 @@ var cnt=0;
 
 var q = document.getElementsByClassName("question");
 var f = document.getElementsByClassName("form");
+var inp = document.getElementsByTagName("input");
 
 for (var i = 1; i < q.length; i++) {
     q[i].style.display = "none";
@@ -15,13 +16,23 @@ document.getElementById("finish").style.display = "none";
 document.getElementById("inputerror").style.display = "none";
 
 document.getElementById("next").addEventListener("click", function() {
+    console.log(inp[201])
     if(cnt<30){
-        if(!(document.getElementsByTagName("input")[1+6*cnt+0].checked)&& !(document.getElementsByTagName("input")[1+6*cnt+1].checked)&&
-        !(document.getElementsByTagName("input")[1+6*cnt+2].checked)&& !(document.getElementsByTagName("input")[1+6*cnt+3].checked)&&
-        !(document.getElementsByTagName("input")[1+6*cnt+4].checked) &&!(document.getElementsByTagName("input")[1+6*cnt+5].checked)){
+        if(!(inp[1+6*cnt+0].checked)&& !(inp[1+6*cnt+1].checked)&&
+        !(inp[1+6*cnt+2].checked)&& !(inp[1+6*cnt+3].checked)&&
+        !(inp[1+6*cnt+4].checked) &&!(inp[1+6*cnt+5].checked)){
             document.getElementById("inputerror").style.display = "block";
             return;
-    }}
+    }}else if(cnt==34){
+        if(!(inp[200+1].checked)&& !(inp[200+2].checked)&&
+        !(inp[200+3].checked)&& !(inp[200+4].checked)&&
+        !(inp[200+5].checked)){
+            document.getElementById("inputerror").style.display = "block";
+            return;
+    }
+    }
+
+
     var q = document.getElementsByClassName("question");
     var f = document.getElementsByClassName("form");
 
