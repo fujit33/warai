@@ -3,19 +3,23 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title>survey</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="/static/css/main.css">
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
 </head>
 <body>
+<div class="container">
 <h2>アンケートです！</h2>
 
 <div>
       {% for boke in bokes %}
-      <div class="question">
-        <img src="{{ boke.img }}">
-        <p>{{boke.text}}</p>
+      <div class="question row">
+        <img src="{{ boke.img }}" class="col-xs-12 img-responsive">
+        <h3 class="col-xs-12">{{boke.text}}</h3>
       </div>
       {% endfor %}
-  <form action="" method="post" name="survey">
+  <form action="" method="post" name="survey" class="col-xs-12">
   {{ form.hidden_tag() }}
         <div class="form">{{ form.choice0() }}</div><div class="form">{{ form.choice1() }}</div><div class="form">{{ form.choice2() }}</div><div class="form">{{ form.choice3() }}</div><div class="form">{{ form.choice4() }}</div>
         <div class="form">{{ form.choice5() }}</div><div class="form">{{ form.choice6() }}</div><div class="form">{{ form.choice7() }}</div><div class="form">{{ form.choice8() }}</div><div class="form">{{ form.choice9() }}</div>
@@ -24,9 +28,7 @@
         <div class="form">{{ form.choice20() }}</div><div class="form">{{ form.choice21() }}</div><div class="form">{{ form.choice22() }}</div><div class="form">{{ form.choice23() }}</div><div class="form">{{ form.choice24() }}</div>
         <div class="form">{{ form.choice25() }}</div><div class="form">{{ form.choice26() }}</div><div class="form">{{ form.choice27() }}</div><div class="form">{{ form.choice28() }}</div><div class="form">{{ form.choice29() }}</div>
 
-      <div class="question">
-        コンプレックス質問1
-      </div>
+      <div class="question">コンプレックス質問1</div>
       <div class="form">
         {{form.comp0() }}
       </div>
@@ -67,13 +69,15 @@
       <div class="form">
         {{ form.twitter() }}
       </div>
-  <input id="next" type="button" value="Next!">
-　<input id="finish" type="submit" value="送信">
+  <button id="next" type="button" class="btn-primary">次へ！</button>
+　<button id="finish" type="submit" class="btn-success">送信！</button>
   </form>
+<div id="inputerror" class="col-xs-12">値を入力して下さい！</div>
 </div>
-
-<div id="inputerror">値を入力して下さい！</div>
-
+</div>
+<!--bootstrap & main.js  -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="/static/bootstrap/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="/static/js/main.js"></script>
 </body>
 </html>
