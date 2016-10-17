@@ -14,9 +14,13 @@
 
 <div>
       {% for boke in bokes %}
-      <div class="question row">
-        <img src="{{ boke.img }}" class="col-xs-12 img-responsive">
+      <div class="question">
+      <div class="row"></div>
+      <img src="{{ boke.img }}" class="col-xs-8 img-responsive">
+      </div>
+      <div class="row">
         <h3 class="col-xs-12">{{boke.text}}</h3>
+      </div>
       </div>
       {% endfor %}
   <form action="" method="post" name="survey" class="col-xs-12">
