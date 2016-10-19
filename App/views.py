@@ -105,7 +105,7 @@ def survey():
             comp0 = comp0, comp1= comp1, comp2=comp2, comp3=comp3, botti=botti, bokete=bokete, twitter=twitter, timestamp=timestamp)
         db.session.add(survey)
         db.session.commit()
-        return redirect(url_for('/thanks'))
+        return redirect(url_for('thanks'))
 
     survey_list = Survey.query.order_by(Survey.timestamp.desc())
     return render_template('survey.html',

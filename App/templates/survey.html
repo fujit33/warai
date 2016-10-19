@@ -16,61 +16,65 @@
       {% for boke in bokes %}
       <div class="question center-block">
       <div class="row">
-      <img src="{{ boke.img }}" class="col-xs-12 img-responsive center-block">
+      <div class="col-xs-2"></div>
+      <div class="col-xs-8">
+      <img src="{{ boke.img }}" class="img-responsive center-block">
+      </div>
+      <div class="col-xs-2"></div>
       </div>
       <div class="row">
-        <h3 class="col-xs-12">{{boke.text}}</h3>
+        <h3 class="col-xs-12 text-center">{{boke.text}}</h3>
       </div>
       </div>
       {% endfor %}
   <form action="" method="post" name="survey">
   {{ form.hidden_tag() }}
-        <div class="form" data-toggle="buttons">{{ form.choice0() }}</div><div class="form" data-toggle="buttons">{{ form.choice1() }}</div><div class="form" data-toggle="buttons">{{ form.choice2() }}</div><div class="form" data-toggle="buttons">{{ form.choice3() }}</div><div class="form" data-toggle="buttons">{{ form.choice4() }}</div>
-        <div class="form" data-toggle="buttons">{{ form.choice5() }}</div><div class="form" data-toggle="buttons">{{ form.choice6() }}</div><div class="form" data-toggle="buttons">{{ form.choice7() }}</div><div class="form" data-toggle="buttons">{{ form.choice8() }}</div><div class="form" data-toggle="buttons">{{ form.choice9() }}</div>
-        <div class="form" data-toggle="buttons">{{ form.choice10() }}</div><div class="form" data-toggle="buttons">{{ form.choice11() }}</div><div class="form" data-toggle="buttons">{{ form.choice12() }}</div><div class="form" data-toggle="buttons">{{ form.choice13() }}</div><div class="form" data-toggle="buttons">{{ form.choice14() }}</div>
-        <div class="form" data-toggle="buttons">{{ form.choice15() }}</div><div class="form" data-toggle="buttons">{{ form.choice16() }}</div><div class="form" data-toggle="buttons">{{ form.choice17() }}</div><div class="form" data-toggle="buttons">{{ form.choice18() }}</div><div class="form" data-toggle="buttons">{{ form.choice19() }}</div>
-        <div class="form" data-toggle="buttons">{{ form.choice20() }}</div><div class="form" data-toggle="buttons">{{ form.choice21() }}</div><div class="form" data-toggle="buttons">{{ form.choice22() }}</div><div class="form" data-toggle="buttons">{{ form.choice23() }}</div><div class="form" data-toggle="buttons">{{ form.choice24() }}</div>
-        <div class="form" data-toggle="buttons">{{ form.choice25() }}</div><div class="form" data-toggle="buttons">{{ form.choice26() }}</div><div class="form" data-toggle="buttons">{{ form.choice27() }}</div><div class="form" data-toggle="buttons">{{ form.choice28() }}</div><div class="form" data-toggle="buttons">{{ form.choice29() }}</div>
+        <div class="form center-block">{{ form.choice0() }}</div><div class="form center-block">{{ form.choice1() }}</div><div class="form center-block">{{ form.choice2() }}</div><div class="form center-block">{{ form.choice3() }}</div><div class="form center-block">{{ form.choice4() }}</div>
+        <div class="form center-block">{{ form.choice5() }}</div><div class="form center-block">{{ form.choice6() }}</div><div class="form center-block">{{ form.choice7() }}</div><div class="form center-block">{{ form.choice8() }}</div><div class="form center-block">{{ form.choice9() }}</div>
+        <div class="form center-block">{{ form.choice10() }}</div><div class="form center-block">{{ form.choice11() }}</div><div class="form center-block">{{ form.choice12() }}</div><div class="form center-block">{{ form.choice13() }}</div><div class="form center-block">{{ form.choice14() }}</div>
+        <div class="form center-block">{{ form.choice15() }}</div><div class="form center-block">{{ form.choice16() }}</div><div class="form center-block">{{ form.choice17() }}</div><div class="form center-block">{{ form.choice18() }}</div><div class="form center-block">{{ form.choice19() }}</div>
+        <div class="form center-block">{{ form.choice20() }}</div><div class="form center-block">{{ form.choice21() }}</div><div class="form center-block">{{ form.choice22() }}</div><div class="form center-block">{{ form.choice23() }}</div><div class="form center-block">{{ form.choice24() }}</div>
+        <div class="form center-block">{{ form.choice25() }}</div><div class="form center-block">{{ form.choice26() }}</div><div class="form center-block">{{ form.choice27() }}</div><div class="form center-block">{{ form.choice28() }}</div><div class="form center-block">{{ form.choice29() }}</div>
 
       <div class="question">コンプレックス質問1</div>
-      <div class="form" data-toggle="buttons">
+      <div class="form center-block">
         {{form.comp0() }}
       </div>
 
       <div class="question">
         コンプレックス質問2
       </div>
-      <div class="form" data-toggle="buttons">
+      <div class="form center-block">
         {{ form.comp1() }}
       </div>
 
       <div class="question">
         コンプレックス質問3
       </div>
-      <div class="form" data-toggle="buttons">
+      <div class="form center-block">
         {{ form.comp2() }}
       </div>
 
       <div class="question">
         コンプレックス質問4
       </div>
-      <div class="form" data-toggle="buttons">
+      <div class="form center-block">
         {{ form.comp3() }}
       </div>
 
       <div class="question">
         ぼっち質問
       </div>
-      <div class="form" data-toggle="buttons">
+      <div class="form center-block">
         {{ form.botti() }}
       </div>
       <div class="question">
         ボケて下さい
       </div>
-      <div class="form" data-toggle="buttons">
+      <div class="form center-block">
         {{ form.bokete() }}
       </div>
-      <div class="form">
+      <div class="form center-block">
         {{ form.twitter() }}
       </div>
   <button id="next" type="button" class="btn-primary center-block">次へ！</button>
