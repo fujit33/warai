@@ -20,7 +20,7 @@ def hello_world():
     return render_template("index.html")
 
 @app.route('/thanks')
-def thankyou():
+def thanks():
     return render_template("thanks.html")
 
 @app.route('/survey', methods=['GET', 'POST'])

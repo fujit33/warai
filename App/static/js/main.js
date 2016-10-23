@@ -3,6 +3,8 @@ var cnt=0;
 var q = document.getElementsByClassName("question");
 var f = document.getElementsByClassName("form");
 var inp = document.getElementsByTagName("input");
+var hp = document.getElementById("hyouka_p");
+
 
 for (var i = 1; i < q.length; i++) {
     q[i].style.display = "none";
@@ -65,10 +67,15 @@ document.getElementById("next").addEventListener("click", function() {
 
     cnt += 1;
 
+    if (cnt == 30){
+        hp.style.display = "none";
+    }
+
     if (cnt<43){
         q[cnt].style.display = "block";
         f[cnt].style.display = "block";
     }else{
+
         q[43].style.display = "block";
         f[43].style.display = "block";
         document.getElementById("finish").style.display = "block";
