@@ -35,41 +35,56 @@
         <div class="form center-block">{{ form.choice15() }}</div><div class="form center-block">{{ form.choice16() }}</div><div class="form center-block">{{ form.choice17() }}</div><div class="form center-block">{{ form.choice18() }}</div><div class="form center-block">{{ form.choice19() }}</div>
         <div class="form center-block">{{ form.choice20() }}</div><div class="form center-block">{{ form.choice21() }}</div><div class="form center-block">{{ form.choice22() }}</div><div class="form center-block">{{ form.choice23() }}</div><div class="form center-block">{{ form.choice24() }}</div>
         <div class="form center-block">{{ form.choice25() }}</div><div class="form center-block">{{ form.choice26() }}</div><div class="form center-block">{{ form.choice27() }}</div><div class="form center-block">{{ form.choice28() }}</div><div class="form center-block">{{ form.choice29() }}</div>
-
-      <div class="question">コンプレックス質問1</div>
+      <div class="question">
+        <h3>boketeチャレンジ</h3>
+        <p>画像でボケて下さい。（思いつかない方はスキップすることもできます）</p>
+      <div class="row">
+      <div class="col-xs-2"></div>
+      <div class="col-xs-8">
+      <img src="http://d2dcan0armyq93.cloudfront.net/photo/odai/600/d3dc5562d473bc5437668d1245031e30_600.jpg" class="img-responsive center-block">
+      </div>
+      <div class="col-xs-2"></div>
+      </div>
+      </div>
+      <div class="question">
+        <h3>コンプレックスについての質問1/4</h3>
+        <p>あなたが<b>中学生</b>のころ、何か抱えていたコンプレックスはありましたか？当てはまるものを次から選んで下さい。（複数回答可）</p>
+      </div>
       <div class="form center-block">
         {{form.comp0() }}
       </div>
 
       <div class="question">
-        コンプレックス質問2
+        <h3>コンプレックスについての質問2/4</h3>
+        <p>あなたが<b>高校生</b>のころ、何か抱えていたコンプレックスはありましたか？当てはまるものを次から選んで下さい。（複数回答可）</p>
       </div>
       <div class="form center-block">
         {{ form.comp1() }}
       </div>
 
       <div class="question">
-        コンプレックス質問3
+        <h3>コンプレックスについての質問3/4</h3>
+        <p><b>現在</b>、何か抱えていたコンプレックスはありますか？当てはまるものを次から選んで下さい。（複数回答可）</p>
       </div>
       <div class="form center-block">
         {{ form.comp2() }}
       </div>
 
       <div class="question">
-        コンプレックス質問4
+        <h3>コンプレックスについての質問4/4</h3>
+        <p>あなたはコンプレックスに対してどんな方法で対処しようとしますか</p>
+      </div>
       </div>
       <div class="form center-block">
         {{ form.comp3() }}
       </div>
 
       <div class="question">
-        ぼっち質問
+        <h3>ぼっち度についての質問</h3>
+        <p>あなたは中学生のころ、クラスでどんな立ち位置でしたか？１（ぼっち）〜５（人気者）で答えて下さい。</p>
       </div>
       <div class="form center-block">
         {{ form.botti() }}
-      </div>
-      <div class="question">
-        ボケて下さい
       </div>
       <div class="form center-block">
         {{ form.bokete() }}
