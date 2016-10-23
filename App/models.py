@@ -57,7 +57,7 @@ class Survey(db.Model):
     comp0 = db.Column(db.String(20))
     comp1 = db.Column(db.String(20))
     comp2 = db.Column(db.String(20))
-    comp3 = db.Column(db.String(20))
+    comp3 = db.Column(db.String(100))
 
     hito0 = db.Column(db.String(20))
     hito1 = db.Column(db.String(20))
