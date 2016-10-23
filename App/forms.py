@@ -57,7 +57,8 @@ class SurveyForm(Form):
 
     botti = RadioField('botti',validators=[DataRequired()], choices=[("1", "1.ぼっち"),("2","2"), ("3","3"), ("4","4.クラスの人気者")])
 
-    bokete = TextAreaField('bokete', validators=[Length(min=0, max=5000)])
+    bokete0 = StringField('bokete0', validators=[Length(min=0, max=500)])
+    bokete1 = StringField('bokete1', validators=[Length(min=0, max=500)])
     twitter = StringField('twitter', validators=[Length(min=0, max=500)])
 
 

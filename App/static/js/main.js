@@ -24,35 +24,35 @@ document.getElementById("next").addEventListener("click", function() {
             document.getElementById("inputerror").style.display = "block";
             return;
     }}else if(cnt==31){
-        if(!(inp[181].checked)&& !(inp[182].checked)){
+        if(!(inp[182].checked)&& !(inp[183].checked)){
             document.getElementById("inputerror").style.display = "block";
             return;
     }}else if(cnt==32){
-        if(!(inp[183].checked)&& !(inp[184].checked)&& !(inp[185].checked)&& !(inp[186].checked)&& !(inp[187].checked)&& !(inp[188].checked)){
+        if(!(inp[184].checked)&& !(inp[185].checked)&& !(inp[186].checked)&& !(inp[187].checked)&& !(inp[188].checked)&& !(inp[189].checked)){
             document.getElementById("inputerror").style.display = "block";
             return;
     }}else if(cnt==34){
-        if(!(inp[189].checked)&& !(inp[190].checked)&& !(inp[191].checked)&& !(inp[192].checked)&& !(inp[193].checked)){
+        if(!(inp[190].checked)&& !(inp[191].checked)&& !(inp[192].checked)&& !(inp[193].checked)&& !(inp[194].checked)){
             document.getElementById("inputerror").style.display = "block";
             return;
     }}else if(cnt==35){
-        if(!(inp[194].checked)&& !(inp[195].checked)&& !(inp[196].checked)&& !(inp[197].checked)&& !(inp[198].checked)&& !(inp[199].checked)){
+        if(!(inp[195].checked)&& !(inp[196].checked)&& !(inp[197].checked)&& !(inp[198].checked)&& !(inp[199].checked)&& !(inp[200].checked)){
             document.getElementById("inputerror").style.display = "block";
             return;
     }}else if(cnt==36){
-        if(!(inp[200].checked)&& !(inp[201].checked)&& !(inp[202].checked)&& !(inp[203].checked)){
+        if(!(inp[201].checked)&& !(inp[202].checked)&& !(inp[203].checked)&& !(inp[204].checked)){
             document.getElementById("inputerror").style.display = "block";
             return;
     }}else if(cnt==37){
-        if(!(inp[204].checked)&& !(inp[205].checked)&& !(inp[206].checked)&& !(inp[207].checked)){
+        if(!(inp[205].checked)&& !(inp[206].checked)&& !(inp[207].checked)&& !(inp[208].checked)){
             document.getElementById("inputerror").style.display = "block";
             return;
     }}else if(cnt==41){
-        if(!(inp[228].checked)&& !(inp[229].checked)&& !(inp[230].checked)&& !(inp[231].checked)){
+        if(!(inp[229].checked)&& !(inp[230].checked)&& !(inp[231].checked)&& !(inp[232].checked)){
             document.getElementById("inputerror").style.display = "block";
             return;
     }}else if(cnt==42){
-        if(!(inp[232].checked)&& !(inp[233].checked)&& !(inp[234].checked)&& !(inp[235].checked)){
+        if(!(inp[233].checked)&& !(inp[234].checked)&& !(inp[235].checked)&& !(inp[236].checked)){
             document.getElementById("inputerror").style.display = "block";
             return;
     }}

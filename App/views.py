@@ -19,6 +19,9 @@ class JST(tzinfo):
 def hello_world():
     return render_template("index.html")
 
+@app.route('/thanks')
+def thankyou():
+    return render_template("thanks.html")
 
 @app.route('/survey', methods=['GET', 'POST'])
 def survey():
@@ -103,7 +106,7 @@ def survey():
 
         botti = int(form.botti.data)
 
-        bokete = form.bokete.data
+        bokete = form.bokete0.data + "/"+form.bokete1.data
         twitter = form.twitter.data
 
         timestamp = datetime.now(tz=JST())
@@ -122,9 +125,7 @@ def survey():
                            bokes=boke_list,
                            hyoka_list=survey_list)
 
-@app.route('/thanks')
-def thanks():
-    return render_template("thanks.html")
+
 
 
 
