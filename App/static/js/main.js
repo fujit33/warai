@@ -16,21 +16,46 @@ document.getElementById("finish").style.display = "none";
 document.getElementById("inputerror").style.display = "none";
 
 document.getElementById("next").addEventListener("click", function() {
-    console.log(inp[201])
+    console.log(inp[279])
     if(cnt<30){
         if(!(inp[1+6*cnt+0].checked)&& !(inp[1+6*cnt+1].checked)&&
         !(inp[1+6*cnt+2].checked)&& !(inp[1+6*cnt+3].checked)&&
         !(inp[1+6*cnt+4].checked) &&!(inp[1+6*cnt+5].checked)){
             document.getElementById("inputerror").style.display = "block";
             return;
-    }}else if(cnt==34){
-        if(!(inp[200+1].checked)&& !(inp[200+2].checked)&&
-        !(inp[200+3].checked)&& !(inp[200+4].checked)&&
-        !(inp[200+5].checked)){
+    }}else if(cnt==31){
+        if(!(inp[181].checked)&& !(inp[182].checked)){
             document.getElementById("inputerror").style.display = "block";
             return;
-    }
-    }
+    }}else if(cnt==32){
+        if(!(inp[183].checked)&& !(inp[184].checked)&& !(inp[185].checked)&& !(inp[186].checked)&& !(inp[187].checked)&& !(inp[188].checked)){
+            document.getElementById("inputerror").style.display = "block";
+            return;
+    }}else if(cnt==34){
+        if(!(inp[189].checked)&& !(inp[190].checked)&& !(inp[191].checked)&& !(inp[192].checked)&& !(inp[193].checked)){
+            document.getElementById("inputerror").style.display = "block";
+            return;
+    }}else if(cnt==35){
+        if(!(inp[194].checked)&& !(inp[195].checked)&& !(inp[196].checked)&& !(inp[197].checked)&& !(inp[198].checked)&& !(inp[199].checked)){
+            document.getElementById("inputerror").style.display = "block";
+            return;
+    }}else if(cnt==36){
+        if(!(inp[200].checked)&& !(inp[201].checked)&& !(inp[202].checked)&& !(inp[203].checked)){
+            document.getElementById("inputerror").style.display = "block";
+            return;
+    }}else if(cnt==37){
+        if(!(inp[204].checked)&& !(inp[205].checked)&& !(inp[206].checked)&& !(inp[207].checked)){
+            document.getElementById("inputerror").style.display = "block";
+            return;
+    }}else if(cnt==41){
+        if(!(inp[228].checked)&& !(inp[229].checked)&& !(inp[230].checked)&& !(inp[231].checked)){
+            document.getElementById("inputerror").style.display = "block";
+            return;
+    }}else if(cnt==42){
+        if(!(inp[232].checked)&& !(inp[233].checked)&& !(inp[234].checked)&& !(inp[235].checked)){
+            document.getElementById("inputerror").style.display = "block";
+            return;
+    }}
 
 
     var q = document.getElementsByClassName("question");
@@ -41,14 +66,11 @@ document.getElementById("next").addEventListener("click", function() {
 
     cnt += 1;
 
-    if (cnt<36){
+    if (cnt<43){
         q[cnt].style.display = "block";
         f[cnt].style.display = "block";
-        if(cnt==35){
-            f[cnt+1].style.display = "block";
-        }
     }else{
-        f[36].style.display = "none";
+        f[43].style.display = "block";
         document.getElementById("finish").style.display = "block";
         document.getElementById("next").style.display = "none";
     }

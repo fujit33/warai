@@ -1,5 +1,5 @@
 from flask_wtf import Form
-from wtforms import StringField, TextAreaField,RadioField, widgets, SelectMultipleField
+from wtforms import StringField, TextAreaField,RadioField, widgets, SelectMultipleField, SelectField
 from wtforms.validators import DataRequired, Length
 
 class MultiCheckboxField(SelectMultipleField):
@@ -11,6 +11,7 @@ class TodoForm(Form):
     detail = TextAreaField('detail', validators=[Length(min=0, max=5000)])
 
 class SurveyForm(Form):
+    todofukens = []
     choice0 = RadioField('Choice0',validators=[DataRequired()], choices=[("0", '解釈できない'), ("1", "1"),("2","2"), ("3","3"),("4","4"),("5","5")])
     choice1 = RadioField('Choice1',validators=[DataRequired()], choices=[("0", '解釈できない'), ("1", "1"),("2","2"), ("3","3"),("4","4"),("5","5")])
     choice2 = RadioField('Choice2',validators=[DataRequired()], choices=[("0", '解釈できない'), ("1", "1"),("2","2"), ("3","3"),("4","4"),("5","5")])
@@ -41,11 +42,20 @@ class SurveyForm(Form):
     choice27 = RadioField('Choice27',validators=[DataRequired()], choices=[("0", '解釈できない'), ("1", "1"),("2","2"), ("3","3"),("4","4"),("5","5")])
     choice28 = RadioField('Choice28',validators=[DataRequired()], choices=[("0", '解釈できない'), ("1", "1"),("2","2"), ("3","3"),("4","4"),("5","5")])
     choice29 = RadioField('Choice29',validators=[DataRequired()], choices=[("0", '解釈できない'), ("1", "1"),("2","2"), ("3","3"),("4","4"),("5","5")])
-    comp0 = MultiCheckboxField('comp0', choices=[("0", '生まれ'), ("1", "性格"),("2","容姿"), ("3","友達関係"),("4","周囲の評価")])
-    comp1 = MultiCheckboxField('comp1', choices=[("0", '生まれ'), ("1", "性格"),("2","容姿"), ("3","友達関係"),("4","周囲の評価")])
-    comp2 = MultiCheckboxField('comp2', choices=[("0", '生まれ'), ("1", "性格"),("2","容姿"), ("3","友達関係"),("4","周囲の評価")])
-    comp3 = MultiCheckboxField('comp3', choices=[("0", '乗り越える'), ("1", "受け入れる"),("2","ｆｇｄｓ"), ("3","友達関係"),("4","周囲の評価")])
-    botti = RadioField('botti',validators=[DataRequired()], choices=[("1", "1.ぼっち"),("2","2"), ("3","3"),("4","4"),("5","5.クラスの人気者")])
+    hito0 = RadioField('hito0',validators=[DataRequired()], choices=[("男性", '男性'), ("女性", "女性")])
+    hito1 = RadioField('hito1',validators=[DataRequired()], choices=[("10代", '10代'), ("20代", "20代"), ("30代", "30代"), ("40代", "40代"), ("50代", "50代"), ("60代以上", "60代以上")])
+    hito2 = SelectField('hito2',validators=[DataRequired()], choices=[("北海道", '北海道'), ("青森", "青森"), ("岩手", "岩手"), ("宮城", "宮城"), ("秋田", "秋田"), ("山形", "山形"), ("福島", "福島"), ("茨城", "茨城"), ("栃木", "栃木"), ("群馬", "群馬"), ("埼玉", "埼玉"), ("千葉", "千葉"), ("東京", "東京"), ("神奈川", "神奈川"), ("新潟", "新潟"), ("富山", "富山"), ("石川", "石川"), ("福井", "福井"), ("山梨", "山梨"), ("長野", "長野"), ("岐阜", "岐阜"), ("静岡", "静岡"), ("愛知", "愛知"), ("三重", "三重"), ("滋賀", "滋賀"), ("京都", "京都"), ("大阪", "大阪"),
+                                          ("兵庫", "兵庫"), ("奈良", "奈良"), ("和歌山", "和歌山"), ("鳥取", "鳥取"), ("島根", "島根"), ("岡山", "岡山"), ("広島", "広島"), ("山口", "山口"), ("徳島", "徳島"), ("香川", "香川"), ("愛媛", "愛媛"), ("高知", "高知"), ("福岡", "福岡"), ("佐賀", "佐賀"), ("長崎", "長崎"), ("熊本", "熊本"), ("大分", "大分"), ("宮崎", "宮崎"), ("鹿児島", "鹿児島"), ("沖縄", "沖縄")])
+    hito3 = MultiCheckboxField('hito3',validators=[DataRequired()], choices=[("ひとりっこ", 'ひとりっこ'), ("兄", "兄"), ("姉", "姉"), ("弟", "弟"), ("妹", "妹")])
+    hito4 = RadioField('hito4',validators=[DataRequired()], choices=[("運動部（屋外）", '運動部（屋外）'), ("運動部（屋内）", "運動部（屋内）"), ("文化部（音楽）", "文化部（音楽）"), ("文化部（美術）", "文化部（美術）"), ("文化部（その他）", "文化部（その他）"), ("帰宅部", "帰宅部")])
+    hito5 = RadioField('hito5',validators=[DataRequired()], choices=[("草食系", "草食系（消極的）"),("どちらかと言えば草食系","どちらかと言えば草食系"), ("どちらかと言えば肉食系","どちらかと言えば肉食系"),("肉食系","肉食系（積極的）")])
+    hito6 = RadioField('hito6',validators=[DataRequired()], choices=[("Ｍ", "Ｍ"),("どちらかと言えばＭ","どちらかと言えばＭ"), ("どちらかと言えばＳ","どちらかと言えばＳ"),("Ｓ","Ｓ")])
+    comp0 = MultiCheckboxField('comp0', choices=[("容姿", '容姿'), ("性格", "性格"),("家族","家族"), ("友人関係","友人関係"),("恋愛","恋愛"),("周囲の評価","周囲の評価"),("過去の体験","過去の体験")])
+    comp1 = MultiCheckboxField('comp1', choices=[("容姿", '容姿'), ("性格", "性格"),("家族","家族"), ("友人関係","友人関係"),("恋愛","恋愛"),("周囲の評価","周囲の評価"),("過去の体験","過去の体験")])
+    comp2 = MultiCheckboxField('comp2', choices=[("容姿", '容姿'), ("性格", "性格"),("家族","家族"), ("友人関係","友人関係"),("恋愛","恋愛"),("周囲の評価","周囲の評価"),("過去の体験","過去の体験")])
+    comp3 = MultiCheckboxField('comp3',validators=[DataRequired()], choices=[("活かす", '活かす'), ("個性として受け入れる", "個性として受け入れる"),("時間が解決するのを待つ","時間が解決するのを待つ"), ("他の部分でカバーする","他の部分でカバーする")])
+
+    botti = RadioField('botti',validators=[DataRequired()], choices=[("1", "1.ぼっち"),("2","2"), ("3","3"), ("4","4.クラスの人気者")])
 
     bokete = TextAreaField('bokete', validators=[Length(min=0, max=5000)])
     twitter = StringField('twitter', validators=[Length(min=0, max=500)])

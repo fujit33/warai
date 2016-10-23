@@ -53,7 +53,7 @@ def survey():
     {"id":26, "img":'http://d2dcan0armyq93.cloudfront.net/photo/odai/600/03747f0fccd5f688264dcfec451fd836_600.jpg', "text":'いらっしゃいませ／あちらの席へどうぞ！'},
     {"id":27, "img":'http://d2dcan0armyq93.cloudfront.net/photo/odai/600/3b4435e86a40b4aa803e9c2a8e52ec37_600.jpg', "text":'申し訳ついでなのですが帰り道にポストがありましたら・・・'},
     {"id":28, "img":'http://d2dcan0armyq93.cloudfront.net/photo/odai/600/9e1376d07e9caeb524e9395e4e385255_600.jpg', "text":'一塁ランナーがめっちゃ挑発してくる'},
-    {"id":29, "img":'http://d2dcan0armyq93.cloudfront.net/photo/odai/600/5536d4094adcfade44f607b18bb40e52_600.jpg', "text":'綾鷹ギューって／甘えん坊さん／おいで！'}
+    {"id":29, "img":'http://d2dcan0armyq93.cloudfront.net/photo/odai/600/5536d4094adcfade44f607b18bb40e52_600.jpg', "text":'ギューって／甘えん坊さん／おいで！'}
     ]
 
     if request.method == 'POST' and form.validate():
@@ -88,6 +88,14 @@ def survey():
         boke28 = int(form.choice28.data)
         boke29 = int(form.choice29.data)
 
+        hito0 = form.hito0.data
+        hito1 = form.hito1.data
+        hito2 = form.hito2.data
+        hito3 = form.hito3.data
+        hito4 = form.hito4.data
+        hito5 = form.hito5.data
+        hito6 = form.hito6.data
+
         comp0 = "".join(form.comp0.data)
         comp1 = "".join(form.comp1.data)
         comp2 = "".join(form.comp2.data)
@@ -102,7 +110,8 @@ def survey():
         survey = Survey(boke0=boke0, boke1=boke1,boke2=boke2,boke3=boke3,boke4=boke4,boke5=boke5,boke6=boke6,boke7=boke7,boke8=boke8,boke9=boke9,
             boke10=boke10, boke11=boke11,boke12=boke12,boke13=boke13,boke14=boke14,boke15=boke15,boke16=boke16,boke17=boke17,boke18=boke18,boke19=boke19,
             boke20=boke20, boke21=boke21,boke22=boke22,boke23=boke23,boke24=boke24,boke25=boke25,boke26=boke26,boke27=boke27,boke28=boke28,boke29=boke29,
-            comp0 = comp0, comp1= comp1, comp2=comp2, comp3=comp3, botti=botti, bokete=bokete, twitter=twitter, timestamp=timestamp)
+            comp0 = comp0, comp1= comp1, comp2=comp2, comp3=comp3, botti=botti, hito0=hito0, hito1=hito1, hito2=hito2, hito3=hito3, hito4=hito4,
+            hito5=hito5, hito6=hito6, bokete=bokete, twitter=twitter, timestamp=timestamp)
         db.session.add(survey)
         db.session.commit()
         return redirect(url_for('thanks'))

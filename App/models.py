@@ -59,6 +59,14 @@ class Survey(db.Model):
     comp2 = db.Column(db.String(20))
     comp3 = db.Column(db.String(20))
 
+    hito0 = db.Column(db.String(20))
+    hito1 = db.Column(db.String(20))
+    hito2 = db.Column(db.String(20))
+    hito3 = db.Column(db.String(20))
+    hito4 = db.Column(db.String(20))
+    hito5 = db.Column(db.String(20))
+    hito6 = db.Column(db.String(20))
+
     botti = db.Column(db.Integer)
 
     bokete = db.Column(db.String(5000))
