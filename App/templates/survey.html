@@ -21,14 +21,14 @@
       {% for boke in bokes %}
       <div class="question center-block">
       <div class="row">
-      <div class="col-xs-1"></div>
-      <div class="col-xs-10">
+      <div class="col-xs-2"></div>
+      <div class="col-xs-8">
       <img src="{{ boke.img }}" class="img-responsive center-block">
       </div>
-      <div class="col-xs-1"></div>
+      <div class="col-xs-2"></div>
       </div>
       <div class="row">
-        <h3 class="col-xs-12 text-center boketext">{{boke.text}}</h3>
+        <h4 class="col-xs-12 text-center boketext">{{boke.text}}</h4>
       </div>
       </div>
       {% endfor %}
@@ -58,50 +58,50 @@
 <!-- ======================================================================== -->
 <!-- ======================== ひととなり質問 ======================== -->
       <div class="question">
-        <h3>ひととなりについての質問1/7</h3>
-        <p></p>
+        <h3>人物像についての質問1/7</h3>
+        <p>性別を教えてください</p>
       </div>
       <div class="form center-block">
         {{form.hito0() }}
       </div>
       <div class="question">
-        <h3>ひととなりについての質問2/7</h3>
-        <p></p>
+        <h3>人物像についての質問2/7</h3>
+        <p>年代層を教えてください</p>
       </div>
       <div class="form center-block">
         {{form.hito1() }}
       </div>
       <div class="question">
-        <h3>ひととなりについての質問3/7</h3>
-        <p></p>
+        <h3>人物像についての質問3/7</h3>
+        <p>出身地を教えてください</p>
       </div>
       <div class="form center-block">
         {{form.hito2() }}
       </div>
       <div class="question">
-        <h3>ひととなりについての質問4/7</h3>
-        <p></p>
+        <h3>人物像についての質問4/7</h3>
+        <p>兄弟は居ますか？当てはまるものを全て答えて下さい</p>
       </div>
       <div class="form center-block">
         {{form.hito3() }}
       </div>
       <div class="question">
-        <h3>ひととなりについての質問5/7</h3>
-        <p></p>
+        <h3>人物像についての質問5/7</h3>
+        <p>中学のころ、どんな部活に入っていましたか？</p>
       </div>
       <div class="form center-block">
         {{form.hito4() }}
       </div>
       <div class="question">
-        <h3>ひととなりについての質問6/7</h3>
-        <p></p>
+        <h3>人物像についての質問6/7</h3>
+        <p>恋愛について、自分自身のことを肉食系だと思いますか？草食系だと思いますか？</p>
       </div>
       <div class="form center-block">
         {{form.hito5() }}
       </div>
       <div class="question">
-        <h3>ひととなりについての質問7/7</h3>
-        <p></p>
+        <h3>人物像についての質問7/7</h3>
+        <p>自分自身のことをＳ気質だと思いますか？Ｍ気質だとおもいますか？</p>
       </div>
       <div class="form center-block">
         {{form.hito6() }}

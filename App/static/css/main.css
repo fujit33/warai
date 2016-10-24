@@ -73,8 +73,9 @@ input[type=checkbox]:checked + label {
     background:#666;
 }
 
-h3.boketext{
-    height: 70px;
+h4.boketext{
+    height: 50px;
+    font-weight: bold;
 }
 div.boketeform{
     height: 70px;
