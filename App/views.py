@@ -56,7 +56,7 @@ def survey():
     {"id":26, "img":'http://web.sfc.keio.ac.jp/~t13804kf/orf2016/bokeimg/S__7135277.jpg', "text":'いらっしゃいませ／あちらの席へどうぞ！'},
     {"id":27, "img":'http://web.sfc.keio.ac.jp/~t13804kf/orf2016/bokeimg/3b4435e86a40b4aa803e9c2a8e52ec37_600.jpg', "text":'申し訳ついでなのですが帰り道にポストがありましたら・・・'},
     {"id":28, "img":'http://web.sfc.keio.ac.jp/~t13804kf/orf2016/bokeimg/S__7135237.jpg', "text":'一塁ランナーがめっちゃ挑発してくる'},
-    {"id":29, "img":'http://web.sfc.keio.ac.jp/~t13804kf/orf2016/bokeimg/S__7135237.jpg', "text":'ギューって／甘えん坊さん／おいで！'}
+    {"id":29, "img":'http://web.sfc.keio.ac.jp/~t13804kf/orf2016/bokeimg/S__7135278.jpg', "text":'ギューって／甘えん坊さん／おいで！'}
     ]
 
     if request.method == 'POST' and form.validate():

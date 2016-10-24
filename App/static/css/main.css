@@ -78,6 +78,8 @@ h3.boketext{
 }
 div.boketeform{
     height: 70px;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 div#hyouka_p{
     margin-top: 10px;
