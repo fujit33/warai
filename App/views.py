@@ -188,10 +188,10 @@ def survey():
         hito6 = form.hito6.data
 
 
-        comp0 = "".join(form.comp0.data)
-        comp1 = "".join(form.comp1.data)
-        comp2 = "".join(form.comp2.data)
-        media = "".join(form.media.data)
+        comp0 = form.comp0.data
+        comp1 = form.comp1.data
+        comp2 = form.comp2.data
+        media = join(form.media.data
 
         botti = int(form.botti.data)
 
