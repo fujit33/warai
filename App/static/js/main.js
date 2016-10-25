@@ -49,11 +49,11 @@ document.getElementById("next").addEventListener("click", function() {
             document.getElementById("inputerror").style.display = "block";
             return;
     }}else if(cnt==41){
-        if(!(inp[232].checked)&& !(inp[233].checked) && !(inp[234].checked) && !(inp[235].checked)){
+        if(!(inp[233].checked)&& !(inp[234].checked) && !(inp[235].checked) && !(inp[236].checked)){
             document.getElementById("inputerror").style.display = "block";
             return;
     }}else if(cnt==42){
-        if(!(inp[236].checked)&& !(inp[237].checked) && !(inp[238].checked) && !(inp[239].checked)){
+        if(!(inp[237].checked)&& !(inp[238].checked) && !(inp[239].checked) && !(inp[240].checked)){
             document.getElementById("inputerror").style.display = "block";
             return;
     }}
