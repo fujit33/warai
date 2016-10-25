@@ -7,11 +7,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     <link rel="stylesheet" href="/static/css/main.css">
     <title>ご協力ありがとうございました！</title>
+    <link rel="stylesheet" href="/static/css/c3.css">
 </head>
 <body>
 <div class="container">
 <div class="row">
-<div class="center-block col-xs-12">ご協力ありがとうございました！</div>
+<h3 class="text-center">結果発表〜！</h3>
+</div>
+<div class="row">
+<p class="col-xs-12">３０個のボケを芸風が似ている６人の芸人に例えたとき、それぞれの平均評価点は……</p>
+</div>
+<div class="row">
+<div class="col-xs-2"></div>
+<div id="chart"></div>
+<div class="col-xs-2"></div>
+</div>
+
+<p class="text-center">あなたの笑癖は</p>
+<div class="h4 text-danger text-center">{{ top }}</div>
+<p class="text-center">タイプです！！</p>
+
+<div class="row">
+<div class="text-center"><h4>ご協力ありがとうございました！</h4></div>
 </div>
 
 <div><p>調査結果を分析した内容は、11月18日（金）〜19日（土）に六本木ミッドタウンで開催される Open Research Forumにて発表致します。</p>
@@ -35,5 +52,27 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 <script src="/static/bootstrap/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="/static/js/main.js"></script>
+<script src="/static/js/d3.min.js" charset="utf-8"></script>
+<script src="/static/js/c3.min.js" charset="utf-8"></script>
+
+<script>
+var chart = c3.generate({
+    bindto: '#chart',
+    data: {
+        x: 'x',
+        columns: [
+            ['x',"ナイツ","トレンディーエンジェル","堀内健","陣内智則","オードリー","バカリズム"],
+            ['平均点', {{ scores[0] }}, {{ scores[1] }}, {{ scores[2] }}, {{ scores[3] }}, {{ scores[4] }}, {{ scores[5] }}]
+        ],
+        type: 'bar'
+    },
+    axis: {
+        x: {
+            type: 'categorized' // this is needed to load string x value
+        }
+    }
+});
+</script>
+
 </body>
 </html>

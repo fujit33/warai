@@ -206,7 +206,18 @@ def survey():
             hito5=hito5, hito6=hito6, bokete=bokete, twitter=twitter, timestamp=timestamp)
         db.session.add(survey)
         db.session.commit()
-        return redirect(url_for('thanks'))
+        A_mean = sum([boke5,boke7,boke12,boke21,boke25])/len([boke5,boke7,boke12,boke21,boke25])
+        B_mean = sum([boke3,boke9,boke13,boke23,boke28])/len([boke3,boke9,boke13,boke23,boke28])
+        C_mean = sum([boke2,boke6,boke16,boke20,boke27])/len([boke2,boke6,boke16,boke20,boke27])
+        D_mean = sum([boke4,boke10,boke17,boke19,boke26])/len([boke4,boke10,boke17,boke19,boke26])
+        E_mean = sum([boke0,boke8,boke14,boke22,boke29])/len([boke0,boke8,boke14,boke22,boke29])
+        F_mean = sum([boke1,boke11,boke15,boke18,boke24])/len([boke1,boke11,boke15,boke18,boke24])
+        means = [A_mean,B_mean, C_mean,D_mean,E_mean,F_mean]
+        top = ["ナイツ","トレンディーエンジェル","堀内健","陣内智則","オードリー","バカリズム"][means.index(max(means))]
+
+        return render_template('thanks.html',
+                                scores = means,
+                                top = top)
 
     survey_list = Survey.query.order_by(Survey.timestamp.desc())
     return render_template('survey.html',
