@@ -7,6 +7,7 @@ ul {
     clear:both;
 }
 li {
+    height: 30px;
     display:inline-block;
     position:relative;
     float:center;
@@ -24,6 +25,7 @@ li:last-child {
 }
 label {
     display:block;
+    height: 30px;
     min-width:3em;
     text-align:center;
     background:#eee;
