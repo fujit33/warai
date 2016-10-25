@@ -54,10 +54,11 @@ class Survey(db.Model):
     boke28 = db.Column(db.Integer)
     boke29 = db.Column(db.Integer)
 
+    media = db.Column(db.String(500))
     comp0 = db.Column(db.String(20))
     comp1 = db.Column(db.String(20))
     comp2 = db.Column(db.String(20))
-    comp3 = db.Column(db.String(100))
+
 
     hito0 = db.Column(db.String(20))
     hito1 = db.Column(db.String(20))

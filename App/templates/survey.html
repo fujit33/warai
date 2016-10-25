@@ -32,9 +32,9 @@
       <div class="col-xs-2"></div>
       </div>
       <div class="row">
-      <div class="col-xs-2"></div>
-        <div class="col-xs-8 text-center"><h4 class="boketext">{{boke.text}}</h4></div>
-      <div class="col-xs-2"></div>
+      <div class="col-xs-1"></div>
+        <div class="col-xs-10 text-center"><h4 class="boketext">{{boke.text}}</h4></div>
+      <div class="col-xs-1"></div>
       </div>
       </div>
       {% endfor %}
@@ -128,10 +128,24 @@
       <div class="form center-block">
         {{form.hito6() }}
       </div>
+<!-- ======================================================================== -->
+<!-- ======================== お笑い接触質問 ======================== -->
+      <div class="question">
+      <div class="row">
+        <div class="col-xs-12 bg-warning"><h4>お笑い接触についての質問1/1</h4></div>
+      </div>
+        <p>あなたがよく利用する（利用した）コンテンツはどれですか？（<b>複数回答可</b>）</p>
+      </div>
+      <div class="form center-block">
+        {{ form.media() }}
+      </div>
+
 
 
 <!-- ======================================================================== -->
 <!-- ======================== コンプレックス質問 ======================== -->
+
+
 
       <div class="question">
       <div class="row">
@@ -166,15 +180,6 @@
         {{ form.comp2() }}
       </div>
 
-      <div class="question">
-      <div class="row">
-        <div class="col-xs-12 bg-warning"><h4>お笑い接触についての質問1/1</h4></div>
-      </div>
-        <p>あなたがよく利用する（利用した）コンテンツはどれですか？（<b>複数回答可</b>）</p>
-      </div>
-      <div class="form center-block">
-        {{ form.media() }}
-      </div>
 
 
 <!-- ======================================================================== -->
