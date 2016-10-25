@@ -67,10 +67,6 @@ document.getElementById("next").addEventListener("click", function() {
 
     cnt += 1;
 
-    if (cnt == 30){
-        hp.style.display = "none";
-    }
-
     if (cnt<43){
         q[cnt].style.display = "block";
         f[cnt].style.display = "block";
