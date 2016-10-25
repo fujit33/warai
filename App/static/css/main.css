@@ -75,6 +75,10 @@ input[type=checkbox]:checked + label {
     background:#666;
 }
 
+img.bokeimg {
+    margin-top: 10px;
+}
+
 h4.boketext{
     height: 50px;
     font-weight: bold;
