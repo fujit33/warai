@@ -187,10 +187,11 @@ def survey():
         hito5 = form.hito5.data
         hito6 = form.hito6.data
 
+
         comp0 = "".join(form.comp0.data)
         comp1 = "".join(form.comp1.data)
         comp2 = "".join(form.comp2.data)
-        comp3 = "".join(form.comp3.data)
+        media = "".join(form.media.data)
 
         botti = int(form.botti.data)
 
@@ -201,7 +202,7 @@ def survey():
         survey = Survey(boke0=boke0, boke1=boke1,boke2=boke2,boke3=boke3,boke4=boke4,boke5=boke5,boke6=boke6,boke7=boke7,boke8=boke8,boke9=boke9,
             boke10=boke10, boke11=boke11,boke12=boke12,boke13=boke13,boke14=boke14,boke15=boke15,boke16=boke16,boke17=boke17,boke18=boke18,boke19=boke19,
             boke20=boke20, boke21=boke21,boke22=boke22,boke23=boke23,boke24=boke24,boke25=boke25,boke26=boke26,boke27=boke27,boke28=boke28,boke29=boke29,
-            comp0 = comp0, comp1= comp1, comp2=comp2, comp3=comp3, botti=botti, hito0=hito0, hito1=hito1, hito2=hito2, hito3=hito3, hito4=hito4,
+            comp0 = comp0, comp1= comp1, comp2=comp2, media=media, botti=botti, hito0=hito0, hito1=hito1, hito2=hito2, hito3=hito3, hito4=hito4,
             hito5=hito5, hito6=hito6, bokete=bokete, twitter=twitter, timestamp=timestamp)
         db.session.add(survey)
         db.session.commit()
