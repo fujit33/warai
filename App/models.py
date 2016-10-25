@@ -54,18 +54,18 @@ class Survey(db.Model):
     boke28 = db.Column(db.Integer)
     boke29 = db.Column(db.Integer)
     media = db.Column(db.String(500))
-    comp0 = db.Column(db.String(20))
-    comp1 = db.Column(db.String(20))
-    comp2 = db.Column(db.String(20))
+    comp0 = db.Column(db.String(500))
+    comp1 = db.Column(db.String(500))
+    comp2 = db.Column(db.String(500))
 
 
-    hito0 = db.Column(db.String(20))
-    hito1 = db.Column(db.String(20))
-    hito2 = db.Column(db.String(20))
-    hito3 = db.Column(db.String(20))
-    hito4 = db.Column(db.String(20))
-    hito5 = db.Column(db.String(20))
-    hito6 = db.Column(db.String(20))
+    hito0 = db.Column(db.String(500))
+    hito1 = db.Column(db.String(500))
+    hito2 = db.Column(db.String(500))
+    hito3 = db.Column(db.String(500))
+    hito4 = db.Column(db.String(500))
+    hito5 = db.Column(db.String(500))
+    hito6 = db.Column(db.String(500))
 
     botti = db.Column(db.Integer)
 
