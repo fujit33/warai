@@ -53,7 +53,6 @@ class Survey(db.Model):
     boke27 = db.Column(db.Integer)
     boke28 = db.Column(db.Integer)
     boke29 = db.Column(db.Integer)
-
     media = db.Column(db.String(500))
     comp0 = db.Column(db.String(20))
     comp1 = db.Column(db.String(20))

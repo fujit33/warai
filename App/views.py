@@ -191,7 +191,8 @@ def survey():
         comp0 = form.comp0.data
         comp1 = form.comp1.data
         comp2 = form.comp2.data
-        media = join(form.media.data
+
+        media = join(form.media.data)
 
         botti = int(form.botti.data)
 
