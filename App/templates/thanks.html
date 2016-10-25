@@ -28,7 +28,11 @@
 <p class="text-center">タイプです！！</p>
 
 <div class="row">
-<div class="text-center"><h4>ご協力ありがとうございました！</h4></div>
+<div class="col-xs-12">{{ detail }}</div>
+</div>
+
+<div class="row">
+<div class="text-center"><h4>アンケートへご協力いただき<br>ありがとうございました！</h4></div>
 </div>
 
 <div><p>調査結果を分析した内容は、11月18日（金）〜19日（土）に六本木ミッドタウンで開催される Open Research Forumにて発表致します。</p>
@@ -62,7 +66,7 @@ var chart = c3.generate({
         x: 'x',
         columns: [
             ['x',"ナイツ","トレンディーエンジェル","堀内健","陣内智則","オードリー","バカリズム"],
-            ['平均点', {{ scores[0] }}, {{ scores[1] }}, {{ scores[2] }}, {{ scores[3] }}, {{ scores[4] }}, {{ scores[5] }}]
+            ['平均評価点', {{ scores[0] }}, {{ scores[1] }}, {{ scores[2] }}, {{ scores[3] }}, {{ scores[4] }}, {{ scores[5] }}]
         ],
         type: 'bar'
     },
