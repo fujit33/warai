@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>cluster</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/static/css/cluster.css">
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+
+</head>
+<body>
+<div class="container">
+<!--切り替え-->
+<div class="tabbable-panel">
+<div class="tabbable-line">
+<ul class="row nav nav-tabs">
+<li class="active"><a href="#tab1" data-toggle="tab">言葉遊び</a></li>
+<li class=""><a href="#tab2" data-toggle="tab">悲哀</a></li>
+<li class=""><a href="#tab3" data-toggle="tab">幸せ</a></li>
+<li class=""><a href="#tab4" data-toggle="tab">リアクション</a></li>
+<li class=""><a href="#tab5" data-toggle="tab">世界観</a></li>
+<li class=""><a href="#tab6" data-toggle="tab">キャラクター</a></li>
+</ul>
+
+<!-- / タブ-->
+<div id="myTabContent" class="tab-content">
+<div class="tab-pane fade in active" id="tab1">
+<div class="row">
+<div class="col-md-9">
+    <h2 style="color: #6640B2">タイトル</h2>
+    <h3>キャッチコピーとか</h3>
+    <p class="h4">テキストテキストテキストテキストテキストテキスト
+    テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+    テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+    テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+    テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+    テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+    <p class="h4">テキストテキストテキストテキストテキストテキスト
+    テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+    テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+    テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+    テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+    テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+    <p class="h4" style="color: #6640B2">芸人、芸人、芸人、芸人</p>
+</div>
+<div class="col-md-3">
+    <div style="height:600px; overflow-y:auto;">
+        <table>
+        {% for boke in boke_listB %}
+        <tr><td><img src="{{ boke.img }}" class="bokeimg img-responsive center-block"></td></tr>
+        <tr><td class="text-center"><h4 class="boketext">{{ boke.text }}</h4></td></tr>
+        <tr><td>　</td></tr>
+        {% endfor %}
+        </table>
+    </div>
+</div>
+</div>
+</div>
+
+<div class="tab-pane fade" id="tab2">
+<div class="row">
+<div class="col-md-9">
+    <h2 style="color: #A1A1A1">タイトル</h2>
+    <h3>キャッチコピーとか</h3>
+    <p class="h4">テキストテキストテキストテキストテキストテキスト
+    テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+    テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+    テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+    テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+    テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+    <p class="h4">テキストテキストテキストテキストテキストテキスト
+    テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+    テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+    テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+    テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+    テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+    <p class="h4" style="color: #A1A1A1">芸人、芸人、芸人、芸人</p>
+</div>
+<div class="col-md-3">
+    <div style="height:600px; overflow-y:auto;">
+        <table>
+        {% for boke in boke_listB %}
+        <tr><td><img src="{{ boke.img }}" class="bokeimg img-responsive center-block"></td></tr>
+        <tr><td class="text-center"><h4 class="boketext">{{ boke.text }}</h4></td></tr>
+        <tr><td>　</td></tr>
+        {% endfor %}
+        </table>
+    </div>
+</div>
+</div>
+</div>
+<div class="tab-pane fade" id="tab3">
+<div class="row">
+<div class="col-md-9">
+    <h2 style="color: #F7D11B">タイトル</h2>
+    <h3>キャッチコピーとか</h3>
+    <p class="h4">テキストテキストテキストテキストテキストテキスト
+    テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+    テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+    テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+    テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+    テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+    <p class="h4">テキストテキストテキストテキストテキストテキスト
+    テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+    テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+    テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+    テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+    テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+    <p class="h4" style="color: #F7D11B">芸人、芸人、芸人、芸人</p>
+</div>
+<div class="col-md-3">
+    <div style="height:600px; overflow-y:auto;">
+        <table>
+        {% for boke in boke_listC %}
+        <tr><td><img src="{{ boke.img }}" class="bokeimg img-responsive center-block"></td></tr>
+        <tr><td class="text-center"><h4 class="boketext">{{ boke.text }}</h4></td></tr>
+        <tr><td>　</td></tr>
+        {% endfor %}
+        </table>
+    </div>
+</div>
+</div></div>
+<div class="tab-pane fade" id="tab4">
+<div class="row">
+<div class="col-md-9">
+    <h2 style="color: #69DB48">タイトル</h2>
+    <h3>キャッチコピーとか</h3>
+    <p class="h4">テキストテキストテキストテキストテキストテキスト
+    テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+    テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+    テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+    テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+    テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+    <p class="h4">テキストテキストテキストテキストテキストテキスト
+    テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+    テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+    テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+    テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+    テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+    <p class="h4" style="color: #69DB48">芸人、芸人、芸人、芸人</p>
+</div>
+<div class="col-md-3">
+    <div style="height:600px; overflow-y:auto;">
+        <table>
+        {% for boke in boke_listD %}
+        <tr><td><img src="{{ boke.img }}" class="bokeimg img-responsive center-block"></td></tr>
+        <tr><td class="text-center"><h4 class="boketext">{{ boke.text }}</h4></td></tr>
+        <tr><td>　</td></tr>
+        {% endfor %}
+        </table>
+    </div>
+</div>
+</div></div>
+<div class="tab-pane fade" id="tab5">
+<div class="row">
+<div class="col-md-9">
+    <h2 style="color: #46B1DB">タイトル</h2>
+    <h3>キャッチコピーとか</h3>
+    <p class="h4">テキストテキストテキストテキストテキストテキスト
+    テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+    テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+    テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+    テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+    テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+    <p class="h4">テキストテキストテキストテキストテキストテキスト
+    テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+    テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+    テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+    テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+    テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+    <p class="h4" style="color: #46B1DB">芸人、芸人、芸人、芸人</p>
+</div>
+<div class="col-md-3">
+    <div style="height:600px; overflow-y:auto;">
+        <table>
+        {% for boke in boke_listE %}
+        <tr><td><img src="{{ boke.img }}" class="bokeimg img-responsive center-block"></td></tr>
+        <tr><td class="text-center"><h4 class="boketext">{{ boke.text }}</h4></td></tr>
+        <tr><td>　</td></tr>
+        {% endfor %}
+        </table>
+    </div>
+</div>
+</div></div>
+
+<div class="tab-pane fade" id="tab6">
+<div class="row">
+<div class="col-md-9">
+    <h2 style="color: #DB5F29">タイトル</h2>
+    <h3>キャッチコピーとか</h3>
+    <p class="h4">テキストテキストテキストテキストテキストテキスト
+    テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+    テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+    テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+    テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+    テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+    <p class="h4">テキストテキストテキストテキストテキストテキスト
+    テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+    テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+    テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+    テキストテキストテキストテキストテキストテキストテキストテキストテキスト
+    テキストテキストテキストテキストテキストテキストテキストテキストテキスト</p>
+    <p class="h4" style="color: #DB5F29">芸人、芸人、芸人、芸人</p>
+</div>
+<div class="col-md-3">
+    <div style="height:600px; overflow-y:auto;">
+        <table>
+        {% for boke in boke_listF %}
+        <tr><td><img src="{{ boke.img }}" class="bokeimg img-responsive center-block"></td></tr>
+        <tr><td class="text-center"><h4 class="boketext">{{ boke.text }}</h4></td></tr>
+        <tr><td>　</td></tr>
+        {% endfor %}
+        </table>
+    </div>
+</div>
+</div></div>
+</div>
+</div>
+</div>
+
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="/static/bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
