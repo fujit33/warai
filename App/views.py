@@ -258,27 +258,29 @@ def survey():
         tableA_txt = {"r1":"","r2":"","r3":"40%","r4":"ウザウザ言葉遊びタイプ","r5":"","r6":"","r7":"","r8":""}
         tables = []
         clusters = ["A","B","C","D","E","F"]
+        urls = {"A":"https://warai2016.herokuapp.com/","B":"https://warai2016.herokuapp.com/","C":"https://warai2016.herokuapp.com/",
+        "D":"https://warai2016.herokuapp.com/","E":"https://warai2016.herokuapp.com/","F":"https://warai2016.herokuapp.com/"}
         for c in clusters:
           decimal, integer = modf(means2[c])
 
           if means2[c]<1:
             tables.append({"r1":"","r2":"","r3":"","r4":"","r5":"","r6":"","r7":hitos[c],"r8": zab0[int(decimal * 10)],
-              "t1":"","t2":"","t3":"","t4":"","t5":wariais[c],"t6":names[c],"t7":"","t8":""})
+              "t1":"","t2":"","t3":"","t4":"","t5":wariais[c],"t6":names[c],"t7":"","t8":"", "url":urls[c]})
           elif means2[c]<2:
             tables.append({"r1":"","r2":"","r3":"","r4":"","r5":"","r6":hitos[c],"r7":zab0[int(decimal * 10)],"r8":zab ,
-              "t1":"","t2":"","t3":"","t4":wariais[c],"t5":names[c],"t6":"","t7":"","t8":""})
+              "t1":"","t2":"","t3":"","t4":wariais[c],"t5":names[c],"t6":"","t7":"","t8":"", "url":urls[c]})
           elif means2[c]<3:
             tables.append({"r1":"","r2":"","r3":"","r4":"","r5":hitos[c],"r6":zab0[int(decimal * 10)],"r7":zab,"r8": zab,
-              "t1":"","t2":"","t3":wariais[c],"t4":names[c],"t5":"","t6":"","t7":"","t8":""})
+              "t1":"","t2":"","t3":wariais[c],"t4":names[c],"t5":"","t6":"","t7":"","t8":"", "url":urls[c]})
           elif means2[c]<4:
             tables.append({"r1":"","r2":"","r3":"","r4":hitos[c],"r5":zab0[int(decimal * 10)],"r6":zab,"r7":zab,"r8": zab,
-              "t1":"","t2":wariais[c],"t3":names[c],"t4":"","t5":"","t6":"","t7":"","t8":""})
+              "t1":"","t2":wariais[c],"t3":names[c],"t4":"","t5":"","t6":"","t7":"","t8":"", "url":urls[c]})
           elif means2[c]<5:
             tables.append({"r1":"","r2":"","r3":hitos[c],"r4":zab0[int(decimal * 10)],"r5":zab,"r6":zab,"r7":zab,"r8": zab,
-              "t1":wariais[c],"t2":names[c],"t3":"","t4":"","t5":"","t6":"","t7":"","t8":""})
+              "t1":wariais[c],"t2":names[c],"t3":"","t4":"","t5":"","t6":"","t7":"","t8":"", "url":urls[c]})
           else:
             tables.append({"r1":"","r2":hitos[c],"r3":zab0[int(decimal * 10)],"r4":zab,"r5":zab,"r6":zab,"r7":zab,"r8": zab,
-              "t1":names[c],"t2":"","t3":"","t4":"","t5":"","t6":"","t7":"","t8":""})
+              "t1":names[c],"t2":"","t3":"","t4":"","t5":"","t6":"","t7":"","t8":"", "url":urls[c]})
 
         return render_template('result.html',
                                 hyokas = hyokas,
