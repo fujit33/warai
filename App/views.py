@@ -2,9 +2,10 @@ from flask import render_template, flash, redirect, url_for, request
 
 from App import app, db
 from .forms import TodoForm, SurveyForm
-from .models import Todo, Survey
+from .models import Todo, Survey,Surveynew,Bokete
 
 from datetime import datetime,timedelta, tzinfo
+from math import modf
 
 class JST(tzinfo):
     # タイムゾーンの変更用
@@ -179,41 +180,66 @@ def survey():
         boke28 = int(form.choice28.data)
         boke29 = int(form.choice29.data)
 
-        hito0 = form.hito0.data
-        hito1 = form.hito1.data
-        hito2 = form.hito2.data
-        hito3 = form.hito3.data
-        hito4 = form.hito4.data
-        hito5 = form.hito5.data
-        hito6 = form.hito6.data
-
-
-        comp0 = "".join(form.comp0.data)
-        comp1 = "".join(form.comp1.data)
-        comp2 = "".join(form.comp2.data)
-        media = "".join(form.media.data)
-
-        botti = int(form.botti.data)
-
-        bokete = form.bokete0.data + "/"+form.bokete1.data
+        bokete = form.bokete.data
         twitter = form.twitter.data
-
+        mail = form.mail.data
         timestamp = datetime.now(tz=JST())
-        survey = Survey(boke0=boke0, boke1=boke1,boke2=boke2,boke3=boke3,boke4=boke4,boke5=boke5,boke6=boke6,boke7=boke7,boke8=boke8,boke9=boke9,
+
+        survey = Surveynew(boke0=boke0, boke1=boke1,boke2=boke2,boke3=boke3,boke4=boke4,boke5=boke5,boke6=boke6,boke7=boke7,boke8=boke8,boke9=boke9,
             boke10=boke10, boke11=boke11,boke12=boke12,boke13=boke13,boke14=boke14,boke15=boke15,boke16=boke16,boke17=boke17,boke18=boke18,boke19=boke19,
             boke20=boke20, boke21=boke21,boke22=boke22,boke23=boke23,boke24=boke24,boke25=boke25,boke26=boke26,boke27=boke27,boke28=boke28,boke29=boke29,
-            comp0 = comp0, comp1= comp1, comp2=comp2, media=media, botti=botti, hito0=hito0, hito1=hito1, hito2=hito2, hito3=hito3, hito4=hito4,
-            hito5=hito5, hito6=hito6, bokete=bokete, twitter=twitter, timestamp=timestamp)
+            timestamp=timestamp)
         db.session.add(survey)
         db.session.commit()
-        A_mean = sum([boke5,boke7,boke12,boke21,boke25])/len([boke5,boke7,boke12,boke21,boke25])
-        B_mean = sum([boke3,boke9,boke13,boke23,boke28])/len([boke3,boke9,boke13,boke23,boke28])
-        C_mean = sum([boke2,boke6,boke16,boke20,boke27])/len([boke2,boke6,boke16,boke20,boke27])
-        D_mean = sum([boke4,boke10,boke17,boke19,boke26])/len([boke4,boke10,boke17,boke19,boke26])
-        E_mean = sum([boke0,boke8,boke14,boke22,boke29])/len([boke0,boke8,boke14,boke22,boke29])
-        F_mean = sum([boke1,boke11,boke15,boke18,boke24])/len([boke1,boke11,boke15,boke18,boke24])
-        means = [A_mean,B_mean, C_mean,D_mean,E_mean,F_mean]
-        top = ["ナイツ","トレンディーエンジェル","堀内健","陣内智則","オードリー","バカリズム"][means.index(max(means))]
+        bokete_add = Bokete(bokete=bokete,twitter=twitter,mail=mail,count=0,timestamp=timestamp)
+        db.session.add(bokete_add)
+        db.session.commit()
+        all_mean  =2.4614121510673237
+        means = {'4': 2.9745484400656816,
+ '8': 2.0377668308702792,
+ '0': 2.2110016420361247,
+ '19': 2.4376026272577995,
+ '27': 1.5041050903119868,
+ '11': 2.6559934318555007,
+ '22': 2.8390804597701149,
+ '2': 2.4129720853858787,
+ '3': 2.1945812807881775,
+ '1': 2.7947454844006567,
+ '26': 2.7036124794745486,
+ '25': 2.6756978653530377,
+ '24': 2.3563218390804597,
+ '20': 2.3842364532019706,
+ '13': 2.0435139573070606,
+ '5': 2.8103448275862069,
+ '18': 2.5919540229885056,
+ '23': 2.8275862068965516,
+ '9': 2.6313628899835795,
+ '6': 2.2298850574712645,
+ '14': 2.8530377668308704,
+ '7': 2.7183908045977012,
+ '12': 2.8924466338259442,
+ '10': 2.8103448275862069,
+ '16': 2.3768472906403941,
+ '15': 2.3990147783251232,
+ '28': 1.9039408866995073,
+ '21': 2.2725779967159276,
+ '29': 2.5533661740558293,
+ '17': 1.7454844006568144}
+        hyokas = [boke0,boke1,boke2,boke3,boke4,boke5,boke6,boke7,boke8,boke9,
+        boke10,boke11,boke12,boke13,boke14,boke15,boke16,boke17,boke18,boke19,
+        boke20,boke21,boke22,boke23,boke24,boke25,boke26,boke27,boke28,boke29,]
+        A_mean = sum([boke5*all_mean/means["5"],boke7*all_mean/means["7"],boke12*all_mean/means["12"],boke21*all_mean/means["21"],boke25*all_mean/means["25"]])/5
+        B_mean = sum([boke3*all_mean/means["3"],boke9*all_mean/means["9"],boke13*all_mean/means["13"],boke23*all_mean/means["23"],boke28*all_mean/means["28"]])/5
+        C_mean = sum([boke2*all_mean/means["2"],boke6*all_mean/means["6"],boke16*all_mean/means["16"],boke20*all_mean/means["20"],boke27*all_mean/means["27"]])/5
+        D_mean = sum([boke4*all_mean/means["4"],boke10*all_mean/means["10"],boke17*all_mean/means["17"],boke19*all_mean/means["19"],boke26*all_mean/means["26"]])/5
+        E_mean = sum([boke0*all_mean/means["0"],boke8*all_mean/means["8"],boke14*all_mean/means["14"],boke22*all_mean/means["22"],boke29*all_mean/means["29"]])/5
+        F_mean = sum([boke1*all_mean/means["1"],boke11*all_mean/means["11"],boke15*all_mean/means["15"],boke18*all_mean/means["18"],boke24*all_mean/means["24"]])/5
+        means = [round(A_mean,1),round(B_mean,1), round(C_mean,1),round(D_mean,1),round(E_mean,1),round(F_mean,1)]
+        means2 = {"A":round(A_mean,1),"B":round(B_mean,1),"C": round(C_mean,1),"D":round(D_mean,1),"E":round(E_mean,1),"F":round(F_mean,1)}
+        wariais = {"A":str(means2["A"]) + "P","B":str(means2["B"])+ "P","C":str(means2["C"])+ "P", "D":str(means2["D"])+ "P","E":str(means2["E"])+ "P","F":str(means2["F"])+ "P"}
+
+        top = ["ウザウザ言葉遊び","ヲタヲタ悲哀","アヘアヘ幸せ","イヤイヤリアクション","ないない世界観","あるある井戸端会議長"][means.index(max(means))]
+        names = {"A":"ウザウザ言葉遊び","B":"ヲタヲタ悲哀","C":"アヘアヘ幸せ","D":"イヤイヤリアクション","E":"ないない世界観","F":"あるある井戸端会議長"}
         detail = ["あなたは、お題に“上手く”ハマったボケに、ついついにやけてしまうのではないでしょうか？上手く、駄洒落が思いついた時などは、相手にどう思おわれようと、言ってしまうキザな一面があるお人かも？「サンドウィッチマン」等もお好きでは？",
                     "あなたは、ボケから感じ取れる“悲哀”に、ついつい笑ってしまうのではないでしょうか？人の弱みや哀愁に敏感、また自身の過去等を笑い飛ばせるようなお人かも？「２ちゃんねる」等もお好きでは？",
                     "あなたは、“勢いのある”“突拍子もない”ボケに、ついつい笑ってしまうのではないでしょうか？他者が楽しそうな様子を幸せそうに見守る優しいお人かも？「サンシャイン池崎」等もお好きでは？",
@@ -221,10 +247,45 @@ def survey():
                     "あなたは、一見真剣そうな表情から起きる“常識はずれ”な言動に、ついつい笑ってしまうのではないでしょうか？常識はずれな言動に敏感なあなたは、常識的な人かも？？不気味な非常識さを持つ「野生爆弾川島」等もお好きでは？",
                     "あなたは、日常でよく見かける・体験する“あるある”に、ついつい笑ってしまうのではないでしょうか？ちょっと誇張されたウザい“あるある”を日常生活に当てはめられるあたり、人間観察能力が高いお人かも？「ロバート」等もお好きでは？"
                     ][means.index(max(means))]
-        return render_template('thanks.html',
+        # result
+        zab = "http://web.sfc.keio.ac.jp/~t13804kf/orf2016/img/zabuton.png"
+        zab0 = ["http://web.sfc.keio.ac.jp/~t13804kf/orf2016/img/zabuton05.png","http://web.sfc.keio.ac.jp/~t13804kf/orf2016/img/zabuton05.png","http://web.sfc.keio.ac.jp/~t13804kf/orf2016/img/zabuton05.png","http://web.sfc.keio.ac.jp/~t13804kf/orf2016/img/zabuton05.png","http://web.sfc.keio.ac.jp/~t13804kf/orf2016/img/zabuton05.png",
+        "http://web.sfc.keio.ac.jp/~t13804kf/orf2016/img/zabuton05.png","http://web.sfc.keio.ac.jp/~t13804kf/orf2016/img/zabuton05.png","http://web.sfc.keio.ac.jp/~t13804kf/orf2016/img/zabuton05.png",
+        "http://web.sfc.keio.ac.jp/~t13804kf/orf2016/img/zabuton05.png","http://web.sfc.keio.ac.jp/~t13804kf/orf2016/img/zabuton05.png"]
+        hitos = {"A":"http://web.sfc.keio.ac.jp/~t13804kf/orf2016/img/hitoA.png","B":"http://web.sfc.keio.ac.jp/~t13804kf/orf2016/img/hitoB.png","C":"http://web.sfc.keio.ac.jp/~t13804kf/orf2016/img/hitoC.png",
+        "D":"http://web.sfc.keio.ac.jp/~t13804kf/orf2016/img/hitoD.png","E":"http://web.sfc.keio.ac.jp/~t13804kf/orf2016/img/hitoE.png","F":"http://web.sfc.keio.ac.jp/~t13804kf/orf2016/img/hitoF.png"}
+        tableA_img = {"r1":"","r2":"","r3":"","r4":"","r5":"","r6":"","r7":"","r8":""}
+        tableA_txt = {"r1":"","r2":"","r3":"40%","r4":"ウザウザ言葉遊びタイプ","r5":"","r6":"","r7":"","r8":""}
+        tables = []
+        clusters = ["A","B","C","D","E","F"]
+        for c in clusters:
+          decimal, integer = modf(means2[c])
+
+          if means2[c]<1:
+            tables.append({"r1":"","r2":"","r3":"","r4":"","r5":"","r6":"","r7":hitos[c],"r8": zab0[int(decimal * 10)],
+              "t1":"","t2":"","t3":"","t4":"","t5":wariais[c],"t6":names[c],"t7":"","t8":""})
+          elif means2[c]<2:
+            tables.append({"r1":"","r2":"","r3":"","r4":"","r5":"","r6":hitos[c],"r7":zab0[int(decimal * 10)],"r8":zab ,
+              "t1":"","t2":"","t3":"","t4":wariais[c],"t5":names[c],"t6":"","t7":"","t8":""})
+          elif means2[c]<3:
+            tables.append({"r1":"","r2":"","r3":"","r4":"","r5":hitos[c],"r6":zab0[int(decimal * 10)],"r7":zab,"r8": zab,
+              "t1":"","t2":"","t3":wariais[c],"t4":names[c],"t5":"","t6":"","t7":"","t8":""})
+          elif means2[c]<4:
+            tables.append({"r1":"","r2":"","r3":"","r4":hitos[c],"r5":zab0[int(decimal * 10)],"r6":zab,"r7":zab,"r8": zab,
+              "t1":"","t2":wariais[c],"t3":names[c],"t4":"","t5":"","t6":"","t7":"","t8":""})
+          elif means2[c]<5:
+            tables.append({"r1":"","r2":"","r3":hitos[c],"r4":zab0[int(decimal * 10)],"r5":zab,"r6":zab,"r7":zab,"r8": zab,
+              "t1":wariais[c],"t2":names[c],"t3":"","t4":"","t5":"","t6":"","t7":"","t8":""})
+          else:
+            tables.append({"r1":"","r2":hitos[c],"r3":zab0[int(decimal * 10)],"r4":zab,"r5":zab,"r6":zab,"r7":zab,"r8": zab,
+              "t1":names[c],"t2":"","t3":"","t4":"","t5":"","t6":"","t7":"","t8":""})
+
+        return render_template('result.html',
+                                hyokas = hyokas,
                                 scores = means,
                                 top = top,
-                                detail=detail)
+                                detail=detail,
+                                tables=tables)
 
     survey_list = Survey.query.order_by(Survey.timestamp.desc())
     return render_template('survey.html',
