@@ -323,9 +323,11 @@ def survey():
             timestamp=timestamp)
         db.session.add(survey)
         db.session.commit()
-        bokete_add = Bokete(bokete=bokete,twitter=twitter,mail=mail,count=0,timestamp=timestamp)
-        db.session.add(bokete_add)
-        db.session.commit()
+        print(type(bokete))
+        if bokete!="":
+          bokete_add = Bokete(bokete=bokete,twitter=twitter,mail=mail,count=0,timestamp=timestamp)
+          db.session.add(bokete_add)
+          db.session.commit()
         all_mean  =2.4614121510673237
         means = {'4': 2.9745484400656816,
  '8': 2.0377668308702792,
