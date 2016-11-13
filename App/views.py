@@ -390,36 +390,43 @@ def survey():
         tableA_txt = {"r1":"","r2":"","r3":"40%","r4":"ウザウザ言葉遊びタイプ","r5":"","r6":"","r7":"","r8":""}
         tables = []
         clusters = ["A","B","C","D","E","F"]
-        urls = {"A":"https://warai2016.herokuapp.com/cluster","B":"https://warai2016.herokuapp.com/cluster#B","C":"https://warai2016.herokuapp.com/cluster#C",
-        "D":"https://warai2016.herokuapp.com/cluster#D","E":"https://warai2016.herokuapp.com/cluster#E","F":"https://warai2016.herokuapp.com/cluster#F"}
+        tablis = {"A":"tabliA","B":"tabliB","C":"tabliC","D":"tabliD","E":"tabliE","F":"tabliF"}
+        tabs = {"A":"tabA","B":"tabB","C":"tabC","D":"tabD","E":"tabE","F":"tabF"}
         for c in clusters:
           decimal, integer = modf(means2[c])
 
           if means2[c]<1:
             tables.append({"r1":"","r2":"","r3":"","r4":"","r5":"","r6":"","r7":hitos[c],"r8": zab0[int(decimal * 10)],
-              "t1":"","t2":"","t3":"","t4":"","t5":wariais[c],"t6":names[c],"t7":"","t8":"", "url":urls[c]})
+              "t1":"","t2":"","t3":"","t4":"","t5":wariais[c],"t6":names[c],"t7":"","t8":"", "tabli":tablis[c], "tabs":tabs[c]})
           elif means2[c]<2:
             tables.append({"r1":"","r2":"","r3":"","r4":"","r5":"","r6":hitos[c],"r7":zab0[int(decimal * 10)],"r8":zab ,
-              "t1":"","t2":"","t3":"","t4":wariais[c],"t5":names[c],"t6":"","t7":"","t8":"", "url":urls[c]})
+              "t1":"","t2":"","t3":"","t4":wariais[c],"t5":names[c],"t6":"","t7":"","t8":"", "tabli":tablis[c], "tabs":tabs[c]})
           elif means2[c]<3:
             tables.append({"r1":"","r2":"","r3":"","r4":"","r5":hitos[c],"r6":zab0[int(decimal * 10)],"r7":zab,"r8": zab,
-              "t1":"","t2":"","t3":wariais[c],"t4":names[c],"t5":"","t6":"","t7":"","t8":"", "url":urls[c]})
+              "t1":"","t2":"","t3":wariais[c],"t4":names[c],"t5":"","t6":"","t7":"","t8":"", "tabli":tablis[c], "tabs":tabs[c]})
           elif means2[c]<4:
             tables.append({"r1":"","r2":"","r3":"","r4":hitos[c],"r5":zab0[int(decimal * 10)],"r6":zab,"r7":zab,"r8": zab,
-              "t1":"","t2":wariais[c],"t3":names[c],"t4":"","t5":"","t6":"","t7":"","t8":"", "url":urls[c]})
+              "t1":"","t2":wariais[c],"t3":names[c],"t4":"","t5":"","t6":"","t7":"","t8":"", "tabli":tablis[c], "tabs":tabs[c]})
           elif means2[c]<5:
             tables.append({"r1":"","r2":"","r3":hitos[c],"r4":zab0[int(decimal * 10)],"r5":zab,"r6":zab,"r7":zab,"r8": zab,
-              "t1":wariais[c],"t2":names[c],"t3":"","t4":"","t5":"","t6":"","t7":"","t8":"", "url":urls[c]})
+              "t1":wariais[c],"t2":names[c],"t3":"","t4":"","t5":"","t6":"","t7":"","t8":"", "tabli":tablis[c], "tabs":tabs[c]})
           else:
             tables.append({"r1":"","r2":hitos[c],"r3":zab0[int(decimal * 10)],"r4":zab,"r5":zab,"r6":zab,"r7":zab,"r8": zab,
-              "t1":names[c],"t2":"","t3":"","t4":"","t5":"","t6":"","t7":"","t8":"", "url":urls[c]})
+              "t1":names[c],"t2":"","t3":"","t4":"","t5":"","t6":"","t7":"","t8":"", "tabli":tablis[c], "tabs":tabs[c]})
 
         return render_template('result.html',
                                 hyokas = hyokas,
                                 scores = means,
                                 top = top,
                                 detail=detail,
-                                tables=tables)
+                                tables=tables,
+                                boke_listA=[boke_list[5],boke_list[7],boke_list[12],boke_list[21],boke_list[25]],
+                                boke_listB=[boke_list[3],boke_list[9],boke_list[13],boke_list[23],boke_list[28]],
+                                boke_listC=[boke_list[2],boke_list[6],boke_list[16],boke_list[20],boke_list[27]],
+                                boke_listD=[boke_list[4],boke_list[10],boke_list[17],boke_list[19],boke_list[26]],
+                                boke_listE=[boke_list[0],boke_list[8],boke_list[14],boke_list[22],boke_list[29]],
+                                boke_listF=[boke_list[1],boke_list[11],boke_list[15],boke_list[18],boke_list[24]],
+                                )
 
     survey_list = Survey.query.order_by(Survey.timestamp.desc())
     return render_template('survey.html',
