@@ -155,6 +155,13 @@ def cluster():
       boke_listE=[boke_list[0],boke_list[8],boke_list[14],boke_list[22],boke_list[29]],
       boke_listF=[boke_list[1],boke_list[11],boke_list[15],boke_list[18],boke_list[24]],
       )
+@app.route('/grandprix')
+def grandprix():
+    bokelist = db.session.query(Bokete).order_by(Bokete.count)
+    bokes = [(b.bokete,b.timestamp) for b in bokelist]
+    print(bokes)
+    print(datetime.utcnow())
+    return render_template("grandprix.html",bokelist=bokelist)
 
 @app.route('/survey', methods=['GET', 'POST'])
 def survey():
