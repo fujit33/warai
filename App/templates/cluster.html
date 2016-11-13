@@ -222,23 +222,23 @@
 <script type="text/javascript">
     var li = document.getElementsByClassName("tabli");
     for (var i = 1; i < li.length; i++) {
-        li[i].style.display = "none";
+        li[i].className = "tabli";
     }
     var href = window.location.href;
     if(href=="https://warai2016.herokuapp.com/cluster#A"){
-        li[0].style.display = "block";
+        li[0].className = "tabli active";
     }else if(href=="https://warai2016.herokuapp.com/cluster#B"){
-        li[1].style.display = "block";
+        li[1].className = "tabli active";
     }else if(href=="https://warai2016.herokuapp.com/cluster#C"){
-        li[2].style.display = "block";
+        li[2].className = "tabli active";
     }else if(href=="https://warai2016.herokuapp.com/cluster#D"){
-        li[3].style.display = "block";
+        li[3].className =　"tabli active";
     }else if(href=="https://warai2016.herokuapp.com/cluster#E"){
-        li[4].style.display = "block";
+        li[4].className = "tabli active";
     }else if(href=="https://warai2016.herokuapp.com/cluster#F"){
-        li[5].style.display = "block";
+        li[5].className = "tabli active";
     }else{
-        li[0].style.display = "block";
+        li[0].className = "tabli active";
     }
 </script>
 
