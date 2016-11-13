@@ -25,7 +25,7 @@
 
 <!-- / タブ-->
 <div id="myTabContent" class="tab-content">
-<div class="tab-pane fade in active" id="tab1">
+<div class="tab-pane fade" id="tab1">
 <div class="row">
 <div class="col-md-9">
     <h2 style="color: #6640B2">タイトル</h2>
@@ -221,22 +221,30 @@
 </div>
 <script type="text/javascript">
     var li = document.getElementsByClassName("tabli");
+    var tp = document.getElementsByClassName("tab-pane")
     for (var i = 1; i < li.length; i++) {
         li[i].className = "tabli";
     }
+
     var href = window.location.href;
     if(href=="https://warai2016.herokuapp.com/cluster#A"){
         li[0].className = "tabli active";
+        tp[0].className = "tab-pane fade in active"
     }else if(href=="https://warai2016.herokuapp.com/cluster#B"){
         li[1].className = "tabli active";
+        tp[1].className = "tab-pane fade in active"
     }else if(href=="https://warai2016.herokuapp.com/cluster#C"){
         li[2].className = "tabli active";
+        tp[2].className = "tab-pane fade in active"
     }else if(href=="https://warai2016.herokuapp.com/cluster#D"){
         li[3].className =　"tabli active";
+        tp[3].className = "tab-pane fade in active"
     }else if(href=="https://warai2016.herokuapp.com/cluster#E"){
         li[4].className = "tabli active";
+        tp[4].className = "tab-pane fade in active"
     }else if(href=="https://warai2016.herokuapp.com/cluster#F"){
         li[5].className = "tabli active";
+        tp[5].className = "tab-pane fade in active"
     }
 </script>
 
