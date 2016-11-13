@@ -390,8 +390,8 @@ def survey():
         tableA_txt = {"r1":"","r2":"","r3":"40%","r4":"ウザウザ言葉遊びタイプ","r5":"","r6":"","r7":"","r8":""}
         tables = []
         clusters = ["A","B","C","D","E","F"]
-        urls = {"A":"https://warai2016.herokuapp.com/cluster","B":"https://warai2016.herokuapp.com/cluster","C":"https://warai2016.herokuapp.com/cluster",
-        "D":"https://warai2016.herokuapp.com/cluster","E":"https://warai2016.herokuapp.com/cluster","F":"https://warai2016.herokuapp.com/cluster"}
+        urls = {"A":"https://warai2016.herokuapp.com/cluster#A","B":"https://warai2016.herokuapp.com/cluster#B","C":"https://warai2016.herokuapp.com/cluster#C",
+        "D":"https://warai2016.herokuapp.com/cluster#D","E":"https://warai2016.herokuapp.com/cluster#E","F":"https://warai2016.herokuapp.com/cluster#F"}
         for c in clusters:
           decimal, integer = modf(means2[c])
 
