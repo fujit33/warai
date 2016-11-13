@@ -15,7 +15,7 @@
 <div class="tabbable-panel">
 <div class="tabbable-line">
 <ul class="row nav nav-tabs">
-<li class="tabli active"><a href="#tab1" data-toggle="tab">言葉遊び</a></li>
+<li class="tabli"><a href="#tab1" data-toggle="tab">言葉遊び</a></li>
 <li class="tabli"><a href="#tab2" data-toggle="tab">悲哀</a></li>
 <li class="tabli"><a href="#tab3" data-toggle="tab">幸せ</a></li>
 <li class="tabli"><a href="#tab4" data-toggle="tab">リアクション</a></li>
@@ -222,10 +222,6 @@
 <script type="text/javascript">
     var li = document.getElementsByClassName("tabli");
     var tp = document.getElementsByClassName("tab-pane")
-    for (var i = 1; i < li.length; i++) {
-        li[i].className = "tabli";
-    }
-
     var href = window.location.href;
     if(href=="https://warai2016.herokuapp.com/cluster#A"){
         li[0].className = "tabli active";
