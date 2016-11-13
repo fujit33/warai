@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>cluster</title>
+    <title>結果発表</title>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,7 +14,7 @@
 <div class="container">
 <div id="top">
 <div class="row">
-<h3 class="text-center">あなたは……</h3>
+<h3 class="text-center">あなたは</h3>
 <h2 class="text-center">{{ top }}タイプ</h2>
 <h3 class="text-center">です！</h3>
 </div>
@@ -258,15 +258,39 @@
 <br>
 <div class="row">
     <div class="col-xs-8 col-md-10"></div>
-    <div class="col-xs-4 col-md-2"><a type="button" href = "https://warai2016.herokuapp.com/grandprix" class="btn btn-warning center-block">Grand Prix</a></div>
+    <div class="col-xs-4 col-md-2"><button type="button" id="gpbtn" class="btn btn-warning center-block">Grand Prix</button></div>
 </div>
 </div>
+
+<div id="grandprix" style="display: none">
+
+<form class="form-horizontal" method="post" action="/result">
+    <div class="form-group">
+        <label class="control-label col-xs-3">チェックリスト</label>
+        <div class="col-xs-9">
+            {% for boke in bokes6 %}
+            <label class="radio-inline">
+                <input type="radio" value="{{ boke.id }}" name="bokes">{{boke.bokete}}
+            </label>
+            {% endfor%}
+        </div>
+    </div>
+    <input class="btn btn-primary"type="submit" value="送信">
+</form>
+</div>
+
 </div>
 <script type="text/javascript">
 document.getElementById("detail").addEventListener("click", function() {
     document.getElementById("top").style.display = "none";
     document.getElementById("ogiri").style.display = "block";
 });
+
+document.getElementById("gpbtn").addEventListener("click", function() {
+    document.getElementById("ogiri").style.display = "none";
+    document.getElementById("grandprix").style.display = "block";
+});
+
 </script>
 <script type="text/javascript">
     var li = document.getElementsByClassName("tabli");
@@ -274,25 +298,25 @@ document.getElementById("detail").addEventListener("click", function() {
     var href = window.location.href;
     if(href=="https://warai2016.herokuapp.com/cluster"){
         li[0].className = "tabli active";
-        tp[0].className = "tab-pane fade in active"
+        tp[0].className = "tab-pane fade in active";
     }else if(href=="https://warai2016.herokuapp.com/cluster#A"){
         li[1].className = "tabli active";
-        tp[1].className = "tab-pane fade in active"
+        tp[1].className = "tab-pane fade in active";
     }else if(href=="https://warai2016.herokuapp.com/cluster#A"){
         li[2].className = "tabli active";
-        tp[2].className = "tab-pane fade in active"
+        tp[2].className = "tab-pane fade in active";
     }else if(href=="https://warai2016.herokuapp.com/cluster#D"){
         li[3].className =　"tabli active";
-        tp[3].className = "tab-pane fade in active"
+        tp[3].className = "tab-pane fade in active";
     }else if(href=="https://warai2016.herokuapp.com/cluster#E"){
         li[4].className = "tabli active";
-        tp[4].className = "tab-pane fade in active"
+        tp[4].className = "tab-pane fade in active";
     }else if(href=="https://warai2016.herokuapp.com/cluster#F"){
         li[5].className = "tabli active";
-        tp[5].className = "tab-pane fade in active"
+        tp[5].className = "tab-pane fade in active";
     }else if(href=="https://warai2016.herokuapp.com/cluster#F"){
         li[6].className = "tabli active";
-        tp[6].className = "tab-pane fade in active"
+        tp[6].className = "tab-pane fade in active";
     }
     function ChangeTab(tabliname,tabname) {
    // 全部消す
@@ -300,6 +324,7 @@ document.getElementById("detail").addEventListener("click", function() {
     li[i].className = "tabli active";
     tp[i].className = "tab-pane fade in active";
     }
+
     // 指定箇所のみ表示
    document.getElementById(tabliname).className = "tabli active";
    document.getElementById(tabname).className = "tab-pane fade in active";

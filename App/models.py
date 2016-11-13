@@ -118,6 +118,8 @@ class Bokete(db.Model):
     twitter = db.Column(db.String(500))
     mail = db.Column(db.String(500))
     count = db.Column(db.Integer)
+    point = db.Column(db.Integer)
+    cluster = db.Column(db.String(10))
     timestamp = db.Column(db.DateTime)
     def __repr__(self):
         return '<Survey %r>' % (self.timestamp)

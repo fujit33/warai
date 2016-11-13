@@ -48,3 +48,4 @@ class SurveyForm(Form):
     mail = StringField('mail', validators=[Length(min=0, max=500)])
 
 
+

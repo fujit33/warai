@@ -145,6 +145,17 @@ def hello_world():
 def thanks():
     return render_template("thanks.html")
 
+@app.route('/result', methods = ["GET", "POST"])
+def result():
+    if request.method == 'POST':
+      bid = request.form["bokes"]
+      boke = Bokete.query.get(bid)
+      boke.point = int(boke.point+1)
+      db.session.commit()
+      return render_template("thanks.html")
+
+    return render_template("result.html")
+
 @app.route('/cluster')
 def cluster():
     return render_template("cluster.html",
@@ -155,13 +166,7 @@ def cluster():
       boke_listE=[boke_list[0],boke_list[8],boke_list[14],boke_list[22],boke_list[29]],
       boke_listF=[boke_list[1],boke_list[11],boke_list[15],boke_list[18],boke_list[24]],
       )
-@app.route('/grandprix')
-def grandprix():
-    bokelist = db.session.query(Bokete).order_by(Bokete.count)
-    bokes = [(b.bokete,b.timestamp) for b in bokelist]
-    print(bokes)
-    print(datetime.utcnow())
-    return render_template("grandprix.html",bokelist=bokelist)
+
 
 @app.route('/survey', methods=['GET', 'POST'])
 def survey():
@@ -330,11 +335,6 @@ def survey():
             timestamp=timestamp)
         db.session.add(survey)
         db.session.commit()
-        print(type(bokete))
-        if bokete!="":
-          bokete_add = Bokete(bokete=bokete,twitter=twitter,mail=mail,count=0,timestamp=timestamp)
-          db.session.add(bokete_add)
-          db.session.commit()
         all_mean  =2.4614121510673237
         means = {'4': 2.9745484400656816,
  '8': 2.0377668308702792,
@@ -378,6 +378,12 @@ def survey():
         means = [round(A_mean,1),round(B_mean,1), round(C_mean,1),round(D_mean,1),round(E_mean,1),round(F_mean,1)]
         means2 = {"A":round(A_mean,1),"B":round(B_mean,1),"C": round(C_mean,1),"D":round(D_mean,1),"E":round(E_mean,1),"F":round(F_mean,1)}
         wariais = {"A":str(means2["A"]) + "P","B":str(means2["B"])+ "P","C":str(means2["C"])+ "P", "D":str(means2["D"])+ "P","E":str(means2["E"])+ "P","F":str(means2["F"])+ "P"}
+        topcluster = ["A","B","C","D","E","F"][means.index(max(means))]
+
+        if bokete!="":
+          bokete_add = Bokete(bokete=bokete,twitter=twitter,mail=mail,count=0,point=0,timestamp=timestamp, cluster=topcluster)
+          db.session.add(bokete_add)
+          db.session.commit()
 
         top = ["ウザウザ言葉遊び","ヲタヲタ悲哀","アヘアヘ幸せ","イヤイヤリアクション","ないない世界観","あるある井戸端会議長"][means.index(max(means))]
         names = {"A":"ウザウザ言葉遊び","B":"ヲタヲタ悲哀","C":"アヘアヘ幸せ","D":"イヤイヤリアクション","E":"ないない世界観","F":"あるある井戸端会議長"}
@@ -397,10 +403,10 @@ def survey():
         "D":"http://web.sfc.keio.ac.jp/~t13804kf/orf2016/img/hitoD.png","E":"http://web.sfc.keio.ac.jp/~t13804kf/orf2016/img/hitoE.png","F":"http://web.sfc.keio.ac.jp/~t13804kf/orf2016/img/hitoF.png"}
         tableA_img = {"r1":"","r2":"","r3":"","r4":"","r5":"","r6":"","r7":"","r8":""}
         tableA_txt = {"r1":"","r2":"","r3":"40%","r4":"ウザウザ言葉遊びタイプ","r5":"","r6":"","r7":"","r8":""}
-        tables = []
         clusters = ["A","B","C","D","E","F"]
         tablis = {"A":"tabliA","B":"tabliB","C":"tabliC","D":"tabliD","E":"tabliE","F":"tabliF"}
         tabs = {"A":"tabA","B":"tabB","C":"tabC","D":"tabD","E":"tabE","F":"tabF"}
+        tables = []
         for c in clusters:
           decimal, integer = modf(means2[c])
 
@@ -422,7 +428,17 @@ def survey():
           else:
             tables.append({"r1":"","r2":hitos[c],"r3":zab0[int(decimal * 10)],"r4":zab,"r5":zab,"r6":zab,"r7":zab,"r8": zab,
               "t1":names[c],"t2":"","t3":"","t4":"","t5":"","t6":"","t7":"","t8":"", "tabli":tablis[c], "tabs":tabs[c]})
-
+        #======================
+        # grand prix
+        bokelist = db.session.query(Bokete).order_by(Bokete.count)
+        utc = datetime.utcnow()
+        diff = [utc - b.timestamp for b in bokelist]
+        bokes = [{"bokete": b.bokete, "id": b.id, "count":b.count} for b,d in zip(bokelist,diff) if (d.seconds >900) & (b.cluster == topcluster)]
+        bokes6 = bokes[:6]
+        for b in bokes6:
+          boke = Bokete.query.get(b["id"])
+          boke.count = int(b["count"]+1)
+          db.session.commit()
         return render_template('result.html',
                                 hyokas = hyokas,
                                 scores = means,
@@ -435,6 +451,7 @@ def survey():
                                 boke_listD=[boke_list[4],boke_list[10],boke_list[17],boke_list[19],boke_list[26]],
                                 boke_listE=[boke_list[0],boke_list[8],boke_list[14],boke_list[22],boke_list[29]],
                                 boke_listF=[boke_list[1],boke_list[11],boke_list[15],boke_list[18],boke_list[24]],
+                                bokes6 = bokes6,
                                 )
 
     survey_list = Survey.query.order_by(Survey.timestamp.desc())
