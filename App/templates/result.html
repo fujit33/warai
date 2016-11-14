@@ -13,25 +13,102 @@
 <div class="container">
 <div id="top">
 <div class="row">
-    <h2 class="text-center">あなたが選んだ高評価ボケ BEST 5</h2>
+    <h2 class="text-center"></h2>
 </div>
-<div class="row">
-<div class="col-xs-1"></div>
-{% for boke in bokelist_top5 %}
-<div class="col-xs-4">
-    <div class="row">
-        <div class="topscores col-xs-12 text-center h3">{{boke.score}}</div>
-        <div class="col-xs-12"><img src="{{boke.img}}" class="bokeimg img-responsive center-block"></div>
-        <div class="col-xs-12">{{boke.text}}</div>
-    </div>
-</div>
-{% endfor %}
-<div class="col-xs-1"></div>
+
 <div>
-
+    <div class="col-xs-9"></div>
+    <input type="buttton" class="col-xs-2 btn btn-warning" onclick="change()" value="クラスタ">
+    <div class="col-xs-1"></div>
 </div>
 
+<div class="row">
+<table class="table table-striped">
+    <tr>
+    <td class="h3" style="vertical-align: middle;">5</td>
+    <td>
+        <div class="row">
+            {% for boke in bokes5 %}
+                <div class="col-xs-2">
+                    <div> <img src="{{boke.img}}" class="bimg img-responsive center-block">
+                    <img src="{{boke.cimg}}" class="cimg img-responsive center-block" style="display:none"></div>
+                    <div>{{ boke.short_text}}</div>
+                </div>
+            {% endfor %}
+        </div>
+        </td>
+    </tr>
+    <tr>
+    <td class="h3" style="vertical-align: middle;">4</td>
+    <td>
+    <div class="row">
+            {% for boke in bokes4 %}
+                <div class="col-xs-2">
+                    <div> <img src="{{boke.img}}" class="bimg img-responsive center-block">
+                    <img src="{{boke.cimg}}" class="cimg img-responsive center-block" style="display:none"></div>
+                    <div>{{ boke.short_text}}</div>
+                </div>
+            {% endfor %}
+        </div>
+        </td>
+    </tr>
+    <tr><td class="h3" style="vertical-align: middle;">3</td>
+    <td>
+        <div class="row">
+            {% for boke in bokes3 %}
+                <div class="col-xs-2">
+                    <div> <img src="{{boke.img}}" class="bimg img-responsive center-block">
+                    <img src="{{boke.cimg}}" class="cimg img-responsive center-block" style="display:none"></div>
+                    <div>{{ boke.short_text}}</div>
+                </div>
+            {% endfor %}
+        </div>
+        </td>
+    </tr>
+    <tr><td class="h3" style="vertical-align: middle;">2</td>
+    <td>
+        <div class="row">
+            {% for boke in bokes2 %}
+                <div class="col-xs-2">
+                    <div> <img src="{{boke.img}}" class="bimg img-responsive center-block">
+                    <img src="{{boke.cimg}}" class="cimg img-responsive center-block" style="display:none"></div>
+                    <div>{{ boke.short_text}}</div>
+                </div>
+            {% endfor %}
+        </div>
+        </td>
+    </tr>
+    <tr><td class="h3" style="vertical-align: middle;">1</td>
+    <td>
+        <div class="row">
+            {% for boke in bokes1 %}
+                <div class="col-xs-2">
+                    <div> <img src="{{boke.img}}" class="bimg img-responsive center-block">
+                    <img src="{{boke.cimg}}" class="cimg img-responsive center-block" style="display:none"></div>
+                    <div>{{ boke.short_text}}</div>
+                </div>
+            {% endfor %}
+        </div>
+        </td>
+    </tr>
+    <tr><td class="h5" style="vertical-align: middle;">解釈できない</td>
+    <td>
+        <div class="row">
+            {% for boke in bokes0 %}
+                <div class="col-xs-2">
+                    <div> <img src="{{boke.img}}" class="bimg img-responsive center-block">
+                    <img src="{{boke.cimg}}" class="cimg img-responsive center-block" style="display:none"></div>
+                    <div>{{ boke.short_text}}</div>
+                </div>
+            {% endfor %}
+        </div>
+        </td>
+    </tr>
+
+</table>
 </div>
+
+
 <div class="col-xs-3 col-md-4"></div>
 <button id="detail" type="button" class="btn btn-primary center-block col-xs-6 col-md-2"><h4>ボケのクラスター分析！</h4></button>
 <div class="col-xs-3 col-md-4"></div>
@@ -507,7 +584,6 @@ document.getElementById("gpbtn").addEventListener("click", function() {
     li[i].className = "tabli active";
     tp[i].className = "tab-pane fade in active";
     }
-
     // 指定箇所のみ表示
    document.getElementById(tabliname).className = "tabli active";
    document.getElementById(tabname).className = "tab-pane fade in active";
@@ -542,6 +618,28 @@ document.getElementById("gpbtn").addEventListener("click", function() {
         for (var i = 0; i < ts.length; i++) {
             ts[i].style.color = "#DB5F29";
         }
+    }
+
+</script>
+
+<script type="text/javascript">
+    var bi = document.getElementsByClassName("bimg");
+    var ci = document.getElementsByClassName("cimg");
+    var cnt = 0;
+    function change() {
+   // 全部消す
+   if(cnt%2==0){
+       for (var i = 0; i < bi.length; i++) {
+            bi[i].style.display = "none";
+            ci[i].style.display = "block";
+        }
+    }else{
+       for (var i = 0; i < bi.length; i++) {
+            bi[i].style.display = "block";
+            ci[i].style.display = "none";
+        }
+    }
+    cnt++
     }
 
 </script>
