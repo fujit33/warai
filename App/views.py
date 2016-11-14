@@ -369,6 +369,12 @@ def survey():
         hyokas = [boke0,boke1,boke2,boke3,boke4,boke5,boke6,boke7,boke8,boke9,
         boke10,boke11,boke12,boke13,boke14,boke15,boke16,boke17,boke18,boke19,
         boke20,boke21,boke22,boke23,boke24,boke25,boke26,boke27,boke28,boke29,]
+
+        # ボケリストに評価を代入
+        for b,h in zip(boke_list,hyokas):
+          b["score"] = h
+        bokelist_top5 = sorted(boke_list, key=lambda x:x['score'], reverse=True)[:5]
+
         A_mean = sum([boke5*all_mean/means["5"],boke7*all_mean/means["7"],boke12*all_mean/means["12"],boke21*all_mean/means["21"],boke25*all_mean/means["25"]])/5
         B_mean = sum([boke3*all_mean/means["3"],boke9*all_mean/means["9"],boke13*all_mean/means["13"],boke23*all_mean/means["23"],boke28*all_mean/means["28"]])/5
         C_mean = sum([boke2*all_mean/means["2"],boke6*all_mean/means["6"],boke16*all_mean/means["16"],boke20*all_mean/means["20"],boke27*all_mean/means["27"]])/5
@@ -444,6 +450,8 @@ def survey():
                                 scores = means,
                                 top = top,
                                 tables=tables,
+                                topcluster = topcluster,
+                                bokelist_top5 = bokelist_top5,
                                 boke_listA=[boke_list[5],boke_list[7],boke_list[12],boke_list[21],boke_list[25]],
                                 boke_listB=[boke_list[3],boke_list[9],boke_list[13],boke_list[23],boke_list[28]],
                                 boke_listC=[boke_list[2],boke_list[6],boke_list[16],boke_list[20],boke_list[27]],
