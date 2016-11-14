@@ -443,7 +443,6 @@ def survey():
                                 hyokas = hyokas,
                                 scores = means,
                                 top = top,
-                                detail=detail,
                                 tables=tables,
                                 boke_listA=[boke_list[5],boke_list[7],boke_list[12],boke_list[21],boke_list[25]],
                                 boke_listB=[boke_list[3],boke_list[9],boke_list[13],boke_list[23],boke_list[28]],
