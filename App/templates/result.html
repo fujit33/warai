@@ -156,27 +156,6 @@
 </div>
 </div>
 
-<div class="tab-pane fade in active" id="shoten">
-<div class="row">
-    <h3 class="text-center">あなたは</h3>
-    <h2 class="text-center">{{ top }}タイプ</h2>
-    <h3 class="text-center">です！</h3>
-</div>
-<div class="row row-center va-bottom">
-{% for tab in tables %}
-<table class="col-xs-4 col-md-2 text-center center-block" onclick="ChangeTab('{{tab.tabli}}','')">
-    <tr><td>{{ tab.t1 }}<img src="{{ tab.r1 }}" class="img-responsive center-block"></td></tr>
-    <tr><td>{{ tab.t2 }}<img src="{{ tab.r2 }}" class="img-responsive center-block"></td></tr>
-    <tr><td>{{ tab.t3 }}<img src="{{ tab.r3 }}" class="img-responsive center-block"></td></tr>
-    <tr><td>{{ tab.t4 }}<img src="{{ tab.r4 }}" class="img-responsive center-block"></td></tr>
-    <tr><td>{{ tab.t5 }}<img src="{{ tab.r5 }}" class="img-responsive center-block"></td></tr>
-    <tr><td>{{ tab.t6 }}<img src="{{ tab.r6 }}" class="img-responsive center-block"></td></tr>
-    <tr><td>{{ tab.t7 }}<img src="{{ tab.r7 }}" class="img-responsive center-block"></td></tr>
-    <tr><td>{{ tab.t8 }}<img src="{{ tab.r8 }}" class="img-responsive center-block"></td></tr>
-</table>
-{% endfor %}
-</div>
-</div>
 
 
 <!-- ここまで -->
