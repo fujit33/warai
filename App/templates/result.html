@@ -115,7 +115,7 @@
 <div class="col-xs-3 col-md-4"></div>
 <button id="detail" type="button" class="btn btn-primary center-block col-xs-6 col-md-4"><h4>ボケのクラスター分析！</h4></button>
 <div class="col-xs-3 col-md-4"></div>
-
+<br><br><br>
 </div>
 <!--切り替え-->
 <div id="ogiri" style="display: none">
@@ -156,6 +156,27 @@
 </div>
 </div>
 
+<div class="tab-pane fade in active" id="shoten">
+<div class="row">
+    <h3 class="text-center">あなたは</h3>
+    <h2 class="text-center">{{ top }}タイプ</h2>
+    <h3 class="text-center">です！</h3>
+</div>
+<div class="row row-center va-bottom">
+{% for tab in tables %}
+<table class="col-xs-4 col-md-2 text-center center-block" onclick="ChangeTab('{{tab.tabli}}','')">
+    <tr><td>{{ tab.t1 }}<img src="{{ tab.r1 }}" class="img-responsive center-block"></td></tr>
+    <tr><td>{{ tab.t2 }}<img src="{{ tab.r2 }}" class="img-responsive center-block"></td></tr>
+    <tr><td>{{ tab.t3 }}<img src="{{ tab.r3 }}" class="img-responsive center-block"></td></tr>
+    <tr><td>{{ tab.t4 }}<img src="{{ tab.r4 }}" class="img-responsive center-block"></td></tr>
+    <tr><td>{{ tab.t5 }}<img src="{{ tab.r5 }}" class="img-responsive center-block"></td></tr>
+    <tr><td>{{ tab.t6 }}<img src="{{ tab.r6 }}" class="img-responsive center-block"></td></tr>
+    <tr><td>{{ tab.t7 }}<img src="{{ tab.r7 }}" class="img-responsive center-block"></td></tr>
+    <tr><td>{{ tab.t8 }}<img src="{{ tab.r8 }}" class="img-responsive center-block"></td></tr>
+</table>
+{% endfor %}
+</div>
+</div>
 
 
 <!-- ここまで -->
@@ -168,7 +189,7 @@
     <div class="row">
     <div class="col-xs-7">
         <h2 style="color: #6640B2">ウザウザ言葉遊びタイプ</h2>
-        <h3>キャッチコピーとか</h3>
+
     </div>
     <div class="col-xs-5">
     <br>
@@ -226,7 +247,7 @@
     <div class="row">
     <div class="col-xs-7">
         <h2 style="color: #A1A1A1">ヲタヲタ悲哀タイプ</h2>
-        <h3>キャッチコピーとか</h3>
+
     </div>
     <div class="col-xs-5">
     <br>
@@ -284,7 +305,7 @@
     <div class="row">
     <div class="col-xs-7">
         <h2 style="color: #F7D11B">ノリノリ幸せタイプ</h2>
-        <h3>キャッチコピーとか</h3>
+
     </div>
     <div class="col-xs-5">
     <br>
@@ -342,7 +363,7 @@
     <div class="row">
     <div class="col-xs-7">
         <h2 style="color: #69DB48">いやいやリアクションタイプ</h2>
-        <h3>キャッチコピーとか</h3>
+
     </div>
     <div class="col-xs-5">
     <br>
@@ -401,7 +422,7 @@
     <div class="row">
     <div class="col-xs-7">
         <h2 style="color: #46B1DB">ないない世界観タイプ</h2>
-        <h3>キャッチコピーとか</h3>
+
     </div>
     <div class="col-xs-5">
         <br>
@@ -461,7 +482,7 @@
     <div class="row">
     <div class="col-xs-7">
         <h2 style="color: #DB5F29">あるあるキャラタイプ</h2>
-        <h3>キャッチコピーとか</h3>
+
     </div>
     <div class="col-xs-5">
     <br>
