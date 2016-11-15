@@ -435,9 +435,9 @@ def survey():
                     ][means.index(max(means))]
         # result
         zab = "http://web.sfc.keio.ac.jp/~t13804kf/orf2016/img/zabuton.png"
-        zab0 = ["http://web.sfc.keio.ac.jp/~t13804kf/orf2016/img/zabuton05.png","http://web.sfc.keio.ac.jp/~t13804kf/orf2016/img/zabuton05.png","http://web.sfc.keio.ac.jp/~t13804kf/orf2016/img/zabuton05.png","http://web.sfc.keio.ac.jp/~t13804kf/orf2016/img/zabuton05.png","http://web.sfc.keio.ac.jp/~t13804kf/orf2016/img/zabuton05.png",
-        "http://web.sfc.keio.ac.jp/~t13804kf/orf2016/img/zabuton05.png","http://web.sfc.keio.ac.jp/~t13804kf/orf2016/img/zabuton05.png","http://web.sfc.keio.ac.jp/~t13804kf/orf2016/img/zabuton05.png",
-        "http://web.sfc.keio.ac.jp/~t13804kf/orf2016/img/zabuton05.png","http://web.sfc.keio.ac.jp/~t13804kf/orf2016/img/zabuton05.png"]
+        zab0 = ["","http://web.sfc.keio.ac.jp/~t13804kf/orf2016/img/zabuton01.png","http://web.sfc.keio.ac.jp/~t13804kf/orf2016/img/zabuton02.png","http://web.sfc.keio.ac.jp/~t13804kf/orf2016/img/zabuton03.png","http://web.sfc.keio.ac.jp/~t13804kf/orf2016/img/zabuton04.png",
+        "http://web.sfc.keio.ac.jp/~t13804kf/orf2016/img/zabuton05.png","http://web.sfc.keio.ac.jp/~t13804kf/orf2016/img/zabuton06.png","http://web.sfc.keio.ac.jp/~t13804kf/orf2016/img/zabuton07.png",
+        "http://web.sfc.keio.ac.jp/~t13804kf/orf2016/img/zabuton08.png","http://web.sfc.keio.ac.jp/~t13804kf/orf2016/img/zabuton09.png"]
         hitos = {"A":"http://web.sfc.keio.ac.jp/~t13804kf/orf2016/img/hitoA.png","B":"http://web.sfc.keio.ac.jp/~t13804kf/orf2016/img/hitoB.png","C":"http://web.sfc.keio.ac.jp/~t13804kf/orf2016/img/hitoC.png",
         "D":"http://web.sfc.keio.ac.jp/~t13804kf/orf2016/img/hitoD.png","E":"http://web.sfc.keio.ac.jp/~t13804kf/orf2016/img/hitoE.png","F":"http://web.sfc.keio.ac.jp/~t13804kf/orf2016/img/hitoF.png"}
         tableA_img = {"r1":"","r2":"","r3":"","r4":"","r5":"","r6":"","r7":"","r8":""}

@@ -26,7 +26,6 @@ document.getElementById("next").addEventListener("click", function() {
             return;
     }}
 
-
     var q = document.getElementsByClassName("question");
     var f = document.getElementsByClassName("form");
 
