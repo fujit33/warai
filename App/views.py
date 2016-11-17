@@ -373,7 +373,7 @@ def survey():
  '27': 1.4541050903119868,
  '11': 2.6559934318555007,
  '22': 2.8390804597701149,
- '2': 2.3129720853858787,
+ '2': 2.1129720853858787,
  '3': 2.1945812807881775,
  '1': 2.7947454844006567,
  '26': 2.7036124794745486,
@@ -392,7 +392,7 @@ def survey():
  '10': 2.8103448275862069,
  '16': 2.3768472906403941,
  '15': 2.3990147783251232,
- '28': 1.9039408866995073,
+ '28': 1.8039408866995073,
  '21': 2.2725779967159276,
  '29': 2.5533661740558293,
  '17': 1.8954844006568144}
@@ -472,7 +472,8 @@ def survey():
         bokelist = db.session.query(Bokete).order_by(Bokete.count)
         utc = datetime.utcnow()
         diff = [utc - b.timestamp for b in bokelist]
-        bokes = [{"bokete": b.bokete, "id": b.id, "count":b.count} for b,d in zip(bokelist,diff) if (d.seconds >900) & (b.cluster == topcluster)]
+        print((bokelist[0].count>4) & (bokelist[0].point==0))
+        bokes = [{"bokete": b.bokete, "id": b.id, "count":b.count} for b,d in zip(bokelist,diff) if (d.seconds >900) & (b.cluster == topcluster) & ((b.count<=4) | (b.point>0))]
         bokes6 = bokes[:6]
         for b in bokes6:
           boke = Bokete.query.get(b["id"])
