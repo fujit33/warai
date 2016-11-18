@@ -1,9 +1,33 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title></title>
+    <title>Bokette Grand Prix</title>
+    <link rel="stylesheet" href="/static/css/c3.css" type="text/css">
 </head>
 <body>
+<div id="chart"></div>
+{% for boke in bokes %}
+    {{ boke.bokete }}:{{boke.point}}
+{% endfor %}
+
+<script src="/static/js/d3.min.js" charset="utf-8"></script>
+<script src="/static/js/c3.min.js" charset="utf-8"></script>
+<script type="text/javascript">
+var chart = c3.generate({
+    data: {
+        columns: [
+            "{{ pntA }}",
+        ],
+        types:
+            data1: 'bar',
+        }
+    },
+    axis: {
+        rotated: true
+    }
+});
+
+</script>
 
 </body>
 </html>

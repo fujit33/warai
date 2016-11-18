@@ -5,9 +5,10 @@ ul {
     padding:0;
     clear:both;
     display: flex;
+    text-align: center;
 }
 li {
-    height: 30px;
+    height: 40px;
     display:inline-block;
     position:relative;
     float:center;
@@ -15,6 +16,7 @@ li {
     border:solid 1px #ddd;
     border-right:none;
     overflow:hidden;
+
 }
 li:first-child {
     border-radius:5px 0 0 5px;
@@ -25,7 +27,8 @@ li:last-child {
 }
 label {
     display:block;
-    height: 30px;
+    font-size: 1.5em;
+    height: 40px;
     min-width:3em;
     text-align:center;
     background:#eee;

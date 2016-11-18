@@ -167,6 +167,42 @@ def cluster():
       boke_listF=[boke_list[1],boke_list[11],boke_list[15],boke_list[18],boke_list[24]],
       )
 
+@app.route('/grandprix', methods = ["GET"])
+def rank():
+  bokelist = db.session.query(Bokete).order_by(Bokete.point)
+  bokelist_A = [x.point for x in bokelist if x.cluster=="A"][::-1]
+  bokelist_A_boke = [x.bokete for x in bokelist if x.cluster=="A"][::-1]
+  bokelist_B = [x.point for x in bokelist if x.cluster=="B"][::-1]
+  bokelist_B_boke = [x.bokete for x in bokelist if x.cluster=="B"][::-1]
+  bokelist_C = [x.point for x in bokelist if x.cluster=="C"][::-1]
+  bokelist_C_boke = [x.bokete for x in bokelist if x.cluster=="C"][::-1]
+  bokelist_D = [x.point for x in bokelist if x.cluster=="D"][::-1]
+  bokelist_D_boke = [x.bokete for x in bokelist if x.cluster=="D"][::-1]
+  bokelist_E = [x.point for x in bokelist if x.cluster=="E"][::-1]
+  bokelist_E_boke = [x.bokete for x in bokelist if x.cluster=="E"][::-1]
+  bokelist_F = [x.point for x in bokelist if x.cluster=="F"][::-1]
+  bokelist_F_boke = [x.bokete for x in bokelist if x.cluster=="F"][::-1]
+  bokelist_A = ["ウザウザ言葉遊び"].extend(bokelist_A)
+  bokelist_B = ["ヲタヲタ悲哀"].extend(bokelist_B)
+  bokelist_C = ["ノリノリ幸せ"].extend(bokelist_C)
+  bokelist_D = ["いやいやリアクション"].extend(bokelist_D)
+  bokelist_E = ["ないない世界観"].extend(bokelist_E)
+  bokelist_F = ["あるあるキャラ"].extend(bokelist_F)
+  print()
+  return render_template("grandprix.html",
+                          pntA=bokelist_A,
+                          pntB=bokelist_B,
+                          pntC=bokelist_C,
+                          pntD=bokelist_D,
+                          pntE=bokelist_E,
+                          pntF=bokelist_F,
+                          bokeA=bokelist_A_boke,
+                          bokeB=bokelist_B_boke,
+                          bokeC=bokelist_C_boke,
+                          bokeD=bokelist_D_boke,
+                          bokeE=bokelist_E_boke,
+                          bokeF=bokelist_F_boke,
+                          )
 
 @app.route('/survey', methods=['GET', 'POST'])
 def survey():
