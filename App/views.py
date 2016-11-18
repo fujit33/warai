@@ -170,38 +170,30 @@ def cluster():
 @app.route('/grandprix', methods = ["GET"])
 def rank():
   bokelist = db.session.query(Bokete).order_by(Bokete.point)
-  bokelist_A = [x.point for x in bokelist if x.cluster=="A"][::-1]
-  bokelist_A_boke = [x.bokete for x in bokelist if x.cluster=="A"][::-1]
-  bokelist_B = [x.point for x in bokelist if x.cluster=="B"][::-1]
-  bokelist_B_boke = [x.bokete for x in bokelist if x.cluster=="B"][::-1]
-  bokelist_C = [x.point for x in bokelist if x.cluster=="C"][::-1]
-  bokelist_C_boke = [x.bokete for x in bokelist if x.cluster=="C"][::-1]
-  bokelist_D = [x.point for x in bokelist if x.cluster=="D"][::-1]
-  bokelist_D_boke = [x.bokete for x in bokelist if x.cluster=="D"][::-1]
-  bokelist_E = [x.point for x in bokelist if x.cluster=="E"][::-1]
-  bokelist_E_boke = [x.bokete for x in bokelist if x.cluster=="E"][::-1]
-  bokelist_F = [x.point for x in bokelist if x.cluster=="F"][::-1]
-  bokelist_F_boke = [x.bokete for x in bokelist if x.cluster=="F"][::-1]
-  bokelist_A = ["ウザウザ言葉遊び"].extend(bokelist_A)
-  bokelist_B = ["ヲタヲタ悲哀"].extend(bokelist_B)
-  bokelist_C = ["ノリノリ幸せ"].extend(bokelist_C)
-  bokelist_D = ["いやいやリアクション"].extend(bokelist_D)
-  bokelist_E = ["ないない世界観"].extend(bokelist_E)
-  bokelist_F = ["あるあるキャラ"].extend(bokelist_F)
-  print()
+  print(bokelist)
+  print(bokelist[0])
+  print(bokelist[0].cluster=="C")
+  bokelist_A = [x for x in bokelist if x.cluster=="A"][::-1]
+  bokelist_B = [x for x in bokelist if x.cluster=="B"][::-1]
+  bokelist_C = [x for x in bokelist if x.cluster=="C"][::-1]
+  bokelist_D = [x for x in bokelist if x.cluster=="D"][::-1]
+  bokelist_E = [x for x in bokelist if x.cluster=="E"][::-1]
+  bokelist_F = [x for x in bokelist if x.cluster=="F"][::-1]
+  print(bokelist_C)
+  bokelist_A.insert(0,'data1')
+  bokelist_B.insert(0,"dataB")
+  bokelist_C.insert(0,"dataC")
+  bokelist_D.insert(0,"dataD")
+  bokelist_E.insert(0,"dataE")
+  bokelist_F.insert(0,"dataF")
+  print(bokelist_C)
   return render_template("grandprix.html",
-                          pntA=bokelist_A,
-                          pntB=bokelist_B,
-                          pntC=bokelist_C,
-                          pntD=bokelist_D,
-                          pntE=bokelist_E,
-                          pntF=bokelist_F,
-                          bokeA=bokelist_A_boke,
-                          bokeB=bokelist_B_boke,
-                          bokeC=bokelist_C_boke,
-                          bokeD=bokelist_D_boke,
-                          bokeE=bokelist_E_boke,
-                          bokeF=bokelist_F_boke,
+                          bokeA=bokelist_A,
+                          bokeB=bokelist_B,
+                          bokeC=bokelist_C,
+                          bokeD=bokelist_D,
+                          bokeE=bokelist_E,
+                          bokeF=bokelist_F,
                           )
 
 @app.route('/survey', methods=['GET', 'POST'])
@@ -460,8 +452,8 @@ def survey():
           db.session.add(bokete_add)
           db.session.commit()
 
-        top = ["ウザウザ言葉遊び","ヲタヲタ悲哀","ノリノリ幸せ","イヤイヤリアクション","ないない世界観","あるある井戸端会議長"][means.index(max(means))]
-        names = {"A":"ウザウザ言葉遊び","B":"ヲタヲタ悲哀","C":"ノリノリ幸せ","D":"イヤイヤリアクション","E":"ないない世界観","F":"あるある井戸端会議長"}
+        top = ["ウザウザ言葉遊び","ヲタヲタ悲哀","キョロキョロ適応","イヤイヤリアクション","ないない世界観","あるある井戸端会議長"][means.index(max(means))]
+        names = {"A":"ウザウザ言葉遊び","B":"ヲタヲタ悲哀","C":"キョロキョロ適応","D":"イヤイヤリアクション","E":"ないない世界観","F":"あるある井戸端会議長"}
         detail = ["あなたは、お題に“上手く”ハマったボケに、ついついにやけてしまうのではないでしょうか？上手く、駄洒落が思いついた時などは、相手にどう思おわれようと、言ってしまうキザな一面があるお人かも？「サンドウィッチマン」等もお好きでは？",
                     "あなたは、ボケから感じ取れる“悲哀”に、ついつい笑ってしまうのではないでしょうか？人の弱みや哀愁に敏感、また自身の過去等を笑い飛ばせるようなお人かも？「２ちゃんねる」等もお好きでは？",
                     "あなたは、“勢いのある”“突拍子もない”ボケに、ついつい笑ってしまうのではないでしょうか？他者が楽しそうな様子を幸せそうに見守る優しいお人かも？「サンシャイン池崎」等もお好きでは？",

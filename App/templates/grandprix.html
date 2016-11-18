@@ -5,27 +5,81 @@
     <link rel="stylesheet" href="/static/css/c3.css" type="text/css">
 </head>
 <body>
-<div id="chart"></div>
-{% for boke in bokes %}
-    {{ boke.bokete }}:{{boke.point}}
-{% endfor %}
+
+<div class="tabbable-panel">
+<div class="tabbable-line">
+    <ul class="row nav nav-tabs">
+        <li class="tabli active"><a href="#shoten" data-toggle="tab"><strong style="color: #F7D11B">座布団グラフ</strong></a></li>
+        <li class="tabli" id="tabliA"><a href="#tabA" data-toggle="tab">言葉遊び</a></li>
+        <li class="tabli" id="tabliB"><a href="#tabB" data-toggle="tab">悲哀</a></li>
+        <li class="tabli" id="tabliC"><a href="#tabC" data-toggle="tab">幸せ</a></li>
+        <li class="tabli" id="tabliD"><a href="#tabD" data-toggle="tab">リアクション</a></li>
+        <li class="tabli" id="tabliE"><a href="#tabE" data-toggle="tab">世界観</a></li>
+        <li class="tabli" id="tabliF"><a href="#tabF" data-toggle="tab">キャラ</a></li>
+    </ul>
+</div>
+</div>
+
+<div class="tab-pane fade" id="tabA">
+    <table>
+        {% for boke in bokeA%}
+            <tr><td>boke.bokete</td><td>boke.point</td></tr>
+        {% endfor %}
+    </table>
+</div>
+<div class="tab-pane fade" id="tabB">
+    <table>
+        {% for boke in bokeB%}
+            <tr><td>boke.bokete</td><td>boke.point</td></tr>
+        {% endfor %}
+    </table>
+</div>
+<div class="tab-pane fade" id="tabC">
+    <table>
+        {% for boke in bokeC%}
+            <tr><td>boke.bokete</td><td>boke.point</td></tr>
+        {% endfor %}
+    </table>
+</div>
+<div class="tab-pane fade" id="tabD">
+    <table>
+        {% for boke in bokeD%}
+            <tr><td>boke.bokete</td><td>boke.point</td></tr>
+        {% endfor %}
+    </table>
+</div>
+<div class="tab-pane fade" id="tabE">
+    <table>
+        {% for boke in bokeE%}
+            <tr><td>boke.bokete</td><td>boke.point</td></tr>
+        {% endfor %}
+    </table>
+</div>
+<!-- <div class="tab-pane fade" id="tabF">
+    <table>
+        {% for boke in bokeF%}
+            <tr><td>boke.bokete</td><td>boke.point</td></tr>
+        {% endfor %}
+    </table>
+</div>
+ -->
 
 <script src="/static/js/d3.min.js" charset="utf-8"></script>
 <script src="/static/js/c3.min.js" charset="utf-8"></script>
 <script type="text/javascript">
-var chart = c3.generate({
-    data: {
-        columns: [
-            "{{ pntA }}",
-        ],
-        types:
-            data1: 'bar',
-        }
-    },
-    axis: {
-        rotated: true
-    }
-});
+// var chart = c3.generate({
+//     data: {
+//         columns: [
+//             {{ pntA|tojson }}
+//         ],
+//         types:{
+//             data1: 'bar',
+//         }
+//     },
+//     axis: {
+//         rotated: true
+//     }
+// });
 
 </script>
 
