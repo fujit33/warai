@@ -2,84 +2,91 @@
 <html>
 <head>
     <title>Bokette Grand Prix</title>
-    <link rel="stylesheet" href="/static/css/c3.css" type="text/css">
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.min.css">
+
 </head>
 <body>
+<div class="container">
+    <h2>BOKETTE グランプリ　in ORF2016</h2>
+    <div class="row">
+      <div class="col-xs-3 col-sm-4"></div>
+      <div class="col-xs-6 col-sm-4">
+      <img src="http://web.sfc.keio.ac.jp/~t13804kf/orf2016/bokeimg/odai.png" class="img-responsive center-block">
+      </div>
+      <div class="col-xs-3 col-sm-4"></div>
+    </div>
+    <br>
+    <div class="tabbable-panel">
+        <div class="tabbable-line">
+            <ul class="row nav nav-tabs">
+                <li class="tabli active" id="tabliA"><a href="#tabA" data-toggle="tab" style="color: #6640B2">ウザウザ言葉遊び</a></li>
+                <li class="tabli" id="tabliB"><a href="#tabB" data-toggle="tab" style="color: #A1A1A1">ヲタヲタ悲哀</a></li>
+                <li class="tabli" id="tabliC"><a href="#tabC" data-toggle="tab" style="color: #F7D11B">キョロキョロ適応</a></li>
+                <li class="tabli" id="tabliD"><a href="#tabD" data-toggle="tab" style="color: #69DB48">いやいやリアクション</a></li>
+                <li class="tabli" id="tabliE"><a href="#tabE" data-toggle="tab" style="color: #46B1DB">ないない世界観</a></li>
+                <li class="tabli" id="tabliF"><a href="#tabF" data-toggle="tab" style="color: #DB5F29">あるあるキャラ</a></li>
+            </ul>
 
-<div class="tabbable-panel">
-<div class="tabbable-line">
-    <ul class="row nav nav-tabs">
-        <li class="tabli active"><a href="#shoten" data-toggle="tab"><strong style="color: #F7D11B">座布団グラフ</strong></a></li>
-        <li class="tabli" id="tabliA"><a href="#tabA" data-toggle="tab">言葉遊び</a></li>
-        <li class="tabli" id="tabliB"><a href="#tabB" data-toggle="tab">悲哀</a></li>
-        <li class="tabli" id="tabliC"><a href="#tabC" data-toggle="tab">幸せ</a></li>
-        <li class="tabli" id="tabliD"><a href="#tabD" data-toggle="tab">リアクション</a></li>
-        <li class="tabli" id="tabliE"><a href="#tabE" data-toggle="tab">世界観</a></li>
-        <li class="tabli" id="tabliF"><a href="#tabF" data-toggle="tab">キャラ</a></li>
-    </ul>
+        <div id="myTabContent" class="tab-content">
+            <div class="tab-pane fade in active" id="tabA">
+                <table class="table table-striped">
+                    <tr style="background-color: #E0D0FF"><th>ボケ</th><th>得点</th></tr>
+                    {% for boke in bokeA %}
+                        <tr><td>{{boke.bokete}}</td><td>{{boke.point}}</td></tr>
+                    {% endfor %}
+                </table>
+            </div>
+            <div class="tab-pane fade" id="tabB">
+                <table class="table table-striped">
+                    <tr style="background-color: #E5E5E5"><th>ボケ</th><th>得点</th></tr>
+                    {% for boke in bokeB%}
+                        <tr><td>{{boke.bokete}}</td><td>{{boke.point}}</td></tr>
+                    {% endfor %}
+                </table>
+            </div>
+            <div class="tab-pane fade" id="tabC">
+                <table class="table table-striped">
+                    <tr style="background-color: #FFF7D0"><th>ボケ</th><th>得点</th></tr>
+                    {% for boke in bokeC%}
+                        <tr><td>{{boke.bokete}}</td><td>{{boke.point}}</td></tr>
+                    {% endfor %}
+                </table>
+            </div>
+            <div class="tab-pane fade" id="tabD">
+                <table class="table table-striped">
+                    <tr style="background-color: #DAFFD0"><th>ボケ</th><th>得点</th></tr>
+                    {% for boke in bokeD%}
+                        <tr><td>{{boke.bokete}}</td><td>{{boke.point}}</td></tr>
+                    {% endfor %}
+                </table>
+            </div>
+            <div class="tab-pane fade" id="tabE">
+                <table class="table table-striped">
+                    <tr style="background-color: #D0F2FF"><th>ボケ</th><th>得点</th></tr>
+                    {% for boke in bokeE%}
+                        <tr><td>{{boke.bokete}}</td><td>{{boke.point}}</td></tr>
+                    {% endfor %}
+                </table>
+            </div>
+            <div class="tab-pane fade" id="tabF">
+                <table class="table table-striped">
+                    <tr style="background-color: #DB5F29"><th>ボケ</th><th>得点</th></tr>
+                    {% for boke in bokeF%}
+                        <tr><td>{{boke.bokete}}</td><td>{{boke.point}}</td></tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+        </div>
+    </div>
 </div>
-</div>
-
-<div class="tab-pane fade" id="tabA">
-    <table>
-        {% for boke in bokeA%}
-            <tr><td>boke.bokete</td><td>boke.point</td></tr>
-        {% endfor %}
-    </table>
-</div>
-<div class="tab-pane fade" id="tabB">
-    <table>
-        {% for boke in bokeB%}
-            <tr><td>boke.bokete</td><td>boke.point</td></tr>
-        {% endfor %}
-    </table>
-</div>
-<div class="tab-pane fade" id="tabC">
-    <table>
-        {% for boke in bokeC%}
-            <tr><td>boke.bokete</td><td>boke.point</td></tr>
-        {% endfor %}
-    </table>
-</div>
-<div class="tab-pane fade" id="tabD">
-    <table>
-        {% for boke in bokeD%}
-            <tr><td>boke.bokete</td><td>boke.point</td></tr>
-        {% endfor %}
-    </table>
-</div>
-<div class="tab-pane fade" id="tabE">
-    <table>
-        {% for boke in bokeE%}
-            <tr><td>boke.bokete</td><td>boke.point</td></tr>
-        {% endfor %}
-    </table>
-</div>
-<!-- <div class="tab-pane fade" id="tabF">
-    <table>
-        {% for boke in bokeF%}
-            <tr><td>boke.bokete</td><td>boke.point</td></tr>
-        {% endfor %}
-    </table>
-</div>
- -->
 
 <script src="/static/js/d3.min.js" charset="utf-8"></script>
 <script src="/static/js/c3.min.js" charset="utf-8"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="/static/bootstrap/js/bootstrap.min.js"></script>
 <script type="text/javascript">
-// var chart = c3.generate({
-//     data: {
-//         columns: [
-//             {{ pntA|tojson }}
-//         ],
-//         types:{
-//             data1: 'bar',
-//         }
-//     },
-//     axis: {
-//         rotated: true
-//     }
-// });
+
 
 </script>
 

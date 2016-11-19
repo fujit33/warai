@@ -48,14 +48,13 @@
         <div class="form center-block">{{ form.choice25() }}</div><div class="form center-block">{{ form.choice26() }}</div><div class="form center-block">{{ form.choice27() }}</div><div class="form center-block">{{ form.choice28() }}</div><div class="form center-block">{{ form.choice29() }}</div>
       <div class="question">
       <div class="row">
-        <div class="col-xs-12 bg-warning"><h4>boketeチャレンジ</h4></div>
+        <div class="col-xs-12 bg-warning"><h3>boketeチャレンジ</h3></div>
       </div>
-        <p>空欄を穴埋めしてボケて下さい。（どうしても思いつかない方はスキップすることもできます）</p>
+        <p>空欄を穴埋めして<span class="h3">ボケて下さい</span>。（どうしても思いつかない方はスキップすることもできます）</p>
       <div class="row">
       <div class="col-xs-2 col-sm-3"></div>
       <div class="col-xs-8 col-sm-6">
       <img src="http://web.sfc.keio.ac.jp/~t13804kf/orf2016/bokeimg/odai.png" class="img-responsive center-block">
-
       </div>
       <div class="col-xs-2 col-sm-3"></div>
       </div>
@@ -73,20 +72,20 @@
       </div>
 
       <div class="question">
-        <p>ORFの来場者にあなたのボケを評価してもらい、優勝者を決めます。連絡用のTwitterアカウント、もしくはメールアドレスを教えてください。</p>
+        <p class="h4">ORFの来場者にあなたのボケを評価してもらい、優勝者を決めます。連絡用のTwitterアカウント、もしくはメールアドレスを教えてください。</p>
 
       </div>
       <div class="twitter form center-block">
       <div class="row">
         <div class="col-xs-4"></div>
         <div class="col-xs-4">
-        ＠{{ form.twitter() }}
+        tiwtter @{{ form.twitter() }}
         </div>
         <div class="col-xs-4"></div>
-        <br><br>
+        もしくは<br><br>
         <div class="col-xs-4"></div>
         <div class="col-xs-4">
-        Mail{{ form.mail() }}
+        Mailアドレス {{ form.mail() }}
         </div>
         <div class="col-xs-4"></div>
       </div>
