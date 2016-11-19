@@ -170,23 +170,12 @@ def cluster():
 @app.route('/grandprix', methods = ["GET"])
 def rank():
   bokelist = db.session.query(Bokete).order_by(Bokete.point)
-  print(bokelist)
-  print(bokelist[0])
-  print(bokelist[0].cluster=="C")
   bokelist_A = [x for x in bokelist if x.cluster=="A"][::-1]
   bokelist_B = [x for x in bokelist if x.cluster=="B"][::-1]
   bokelist_C = [x for x in bokelist if x.cluster=="C"][::-1]
   bokelist_D = [x for x in bokelist if x.cluster=="D"][::-1]
   bokelist_E = [x for x in bokelist if x.cluster=="E"][::-1]
   bokelist_F = [x for x in bokelist if x.cluster=="F"][::-1]
-  print(bokelist_C)
-  bokelist_A.insert(0,'data1')
-  bokelist_B.insert(0,"dataB")
-  bokelist_C.insert(0,"dataC")
-  bokelist_D.insert(0,"dataD")
-  bokelist_E.insert(0,"dataE")
-  bokelist_F.insert(0,"dataF")
-  print(bokelist_C)
   return render_template("grandprix.html",
                           bokeA=bokelist_A,
                           bokeB=bokelist_B,
